@@ -9,7 +9,7 @@ Recipes.init(
             primaryKey: true,
             autoIncrement: true
         },
-        title: {
+        recipe_title: {
             title: {
                 type: DataTypes.STRING,
                 allowNull: false
