@@ -26,7 +26,7 @@ User.init(
                 len: [4]
             },
         },
-    }
+    },
     {
         hooks: {
             async beforeCreate(newUserData) {
@@ -38,7 +38,11 @@ User.init(
             return updatedUserData;
         }
         },
-    }
-);
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user'
+      }
+    );
 
 module.exports = User;
