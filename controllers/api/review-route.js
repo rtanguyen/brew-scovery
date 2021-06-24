@@ -25,4 +25,24 @@ router.post('/', (req, res) => {
     });
 });
 
+//delete review [needs to be the person that posted, use some type of authentication]
+router.delete('/:id', (req, res) => {
+    Reviews.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(dbReviews => {
+        if (!dbReviews) {
+          res.status(404).json({ message: 'No review found with this id!' });
+          return;
+        }
+        res.json(dbReviews);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
 
+module.exports = router;
