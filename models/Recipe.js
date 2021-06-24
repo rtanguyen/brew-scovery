@@ -1,7 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-Recipe.init(
+class Recipes extends Model{}
+Recipes.init(
     {
         id:{
             type: DataTypes.INTEGER,
@@ -9,9 +10,11 @@ Recipe.init(
             autoIncrement: true
         },
         title: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
+            title: {
+                type: DataTypes.STRING,
+                allowNull: false
+        }
+    },
         ingredients: {
             type: DataTypes.STRING,
             allowNull: false
@@ -29,4 +32,4 @@ Recipe.init(
       }
     );
 
-module.exports = Recipe;
+module.exports = Recipes;
