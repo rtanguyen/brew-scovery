@@ -54,5 +54,25 @@ router.get('/:id', (req, res) => {
         res.status(500).json(err);
       });
  });
-
+//added delete
+ router.delete('/:id', withAuth, (req, res) => {
+    console.log('id', req.params.id);
+    Recipes.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(dbRecipeData => {
+        if (!dbRecipeData) {
+          res.status(404).json({ message: 'No post found with this id' });
+          return;
+        }
+        res.json(dbRecipeData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+ 
 module.exports = router;
