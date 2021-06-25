@@ -1,0 +1,43 @@
+/* GLOBAL */ 
+* {
+    font-family: 'Oswald', sans-serif;
+    margin: none;
+}
+
+/* LANDING PAGE */
+.bg {
+    width: auto;
+    height: 750px;
+    background-image: url("../images/sander-dalhuisen-nA6Xhnq2Od8-unsplash\ \(1\).jpg");
+}
+
+.navbar-brand, 
+head {
+    color: #EF4229 !important;
+    font-family: 'Lobster', cursive;
+}
+
+.prefooter {
+    padding-top: 15px;
+    background-color: #FFF34C;
+}
+
+a {
+text-decoration: none;
+}
+.sm {
+    color: #000000;
+}
+.sm:hover {
+    color: #EF4229;
+}
+
+/* FOOTER */ 
+.footer {
+    padding-top: 10px;
+    /* background-color: black;
+    color: #ffffff; */
+}
+.footsm {
+    font-size: 14px;
+}
