@@ -30,4 +30,29 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+    Recipes.findOne({
+        attributes: ['id', 'recipe_title', 'ingredients','instructions'],
+        include: [
+            {
+            model: Reviews,
+            attributes: ['review_text'],
+            include: {
+                model: User,
+                attributes: ['username']
+            }
+            }]
+    }).then(dbRecipeData => {
+        if (!dbRecipeData) {
+          res.status(404).json({ message: 'No recipe found with this id' });
+          return;
+        }
+        res.json(dbPostData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+ });
+
 module.exports = router;
