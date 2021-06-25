@@ -6,7 +6,7 @@ const withAuth = require('../../utils/auth');
 //right now it includes the reviews attached
 router.get('/', (req, res) => {
     Recipes.findAll({
-        attributes: ['id', 'recipe_title', 'ingredients','instructioins'],
+        attributes: ['id', 'recipe_title', 'ingredients','instructions'],
         include: [
             {
             model: Reviews,
