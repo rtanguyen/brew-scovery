@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Recipes, Reviews, List } = require('../../models')
+const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     Reviews.findAll()
@@ -13,11 +14,10 @@ router.get('/', (req, res) => {
 
 
 //create a review
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Reviews.create({
         title: req.body.title,
         review: req.body.review
-        //user authentication?
     }).then(dbOfferData => res.json(dbOfferData))
     .catch(err => {
       console.log(err);
@@ -25,8 +25,8 @@ router.post('/', (req, res) => {
     });
 });
 
-//delete review [needs to be the person that posted, use some type of authentication]
-router.delete('/:id', (req, res) => {
+//delete review
+router.delete('/:id', withAuth, (req, res) => {
     Reviews.destroy({
       where: {
         id: req.params.id
