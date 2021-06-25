@@ -1,0 +1,34 @@
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="task-form-modal">Shopping List</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form class="shopping-list">
+        <div class="form-group">
+          <div class="list-group">
+  //TODO: add {{each}} for ingredients; add {{if}} nothing on shopping list
+            {{#if ingredients_name.length}}
+            {{#each this}}
+              <label class="list-group-item">
+                <input class="form-check-input me-1 " type="checkbox" value="{{ingredients_name}}" name="ingredient">
+                {{ingredients_name}}
+              </label>
+            {{/each}}
+            {{else}}
+            <p>There are no items in this list.</p>
+            {{/if}}
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script src="javascript/shopping-list.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>

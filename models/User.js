@@ -26,6 +26,9 @@ User.init(
                 len: [4]
             },
         },
+        user_image: {
+            type: DataTypes.STRING
+        }
     },
     {
         hooks: {
