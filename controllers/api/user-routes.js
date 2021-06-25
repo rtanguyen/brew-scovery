@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Recipes, Reviews, List } = require('../../models')
-
+const withAuth = require('../../utils/auth');
 //get all users without pw
 router.get('/', (req, res) => {
     User.findAll({
