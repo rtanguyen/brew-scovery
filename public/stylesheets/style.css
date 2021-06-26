@@ -124,7 +124,8 @@
 
 .prefooter {
     padding-top: 15px;
-    background-color: #FFF34C;
+    background: #FFF24B;
+    border-top: 4px solid #EF4229;
 }
 
 a {
