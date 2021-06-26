@@ -140,8 +140,8 @@ text-decoration: none;
 /* FOOTER */ 
 .footer {
     padding-top: 10px;
-    /* background-color: black;
-    color: #ffffff; */
+    background-color: black;
+    color: #ffffff;
 }
 .footsm {
     font-size: 14px;
