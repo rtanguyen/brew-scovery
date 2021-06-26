@@ -5,6 +5,7 @@
 }
 
 /* SIGNUP/LOGIN PAGE */
+/* NAV BAR */
 .banner {
     width: 100%;
     display: block;
@@ -99,6 +100,26 @@
     border-bottom: 4px solid #EF4229;
     color: #EF4229;
  }
+ /* END NAV BAR STYLES */
+
+ /* SUBHEAD */ 
+ .subhead1 {
+    width: 100%;
+    /* max-height: 700px; */
+    /* overflow: hidden; */
+    display: block;
+    /* text-align: center; */
+    background: #fff;
+}
+
+.subheadContent1 {
+ height: 500px;
+}
+
+.enterCTA {
+    background: #EF4229;
+    border-color: #EF4229;
+}
 
 
 .prefooter {
