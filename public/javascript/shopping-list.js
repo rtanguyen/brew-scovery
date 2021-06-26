@@ -24,7 +24,7 @@ const checkboxes = document.querySelectorAll(
     event.preventDefault();
   
     //TODO: update route
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch(`/api/`, {
       method: "PUT",
       body: JSON.stringify({
         listArr,
