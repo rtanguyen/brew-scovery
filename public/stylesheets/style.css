@@ -5,12 +5,14 @@
 }
 
 /* LANDING PAGE */
-.bg {
+/* .bg {
     width: auto;
     height: 750px;
     background-image: url("../images/sander-dalhuisen-nA6Xhnq2Od8-unsplash\ \(1\).jpg");
-}
-
+} */
+.img-r {
+    width: 100%;
+    }
 .navbar {
     background: white;
     padding: 3rem 3rem;
