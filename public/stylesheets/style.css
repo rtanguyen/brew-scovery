@@ -5,6 +5,27 @@
 }
 
 /* SIGNUP/LOGIN PAGE */
+.banner {
+    width: 100%;
+    display: block;
+    background: #FFF24B;
+}
+
+
+.bannerText {
+    display: block;
+    /* justify-content: center; */
+    animation: slide 10s linear infinite alternate;
+}
+
+@keyframes slide {
+    0% { color: black; }
+   25% { color: black; }
+   50% { color: black; }
+   75% { color: black; }
+  100% { transform: translateX(50%); color: black; }
+ }
+
 .bg {
     max-height: 700px;
     overflow: hidden;
