@@ -3,7 +3,7 @@ const { User, Recipes, Reviews, List } = require('../models')
 const withAuth = require('../../utils/auth');
 
 //on dashboard renders the user account with all reviews and their list
-
+//my account page
 router.get('/', (req, res) => {
     Reviews.findAll({
         where: {
@@ -26,5 +26,7 @@ router.get('/', (req, res) => {
             res.status(500).json(err);
         });
 });
+//edit reviews
 
+//delete reviews
 module.exports = router;
