@@ -11,6 +11,12 @@ router.get('/', (req, res) => {
   res.render('homepage');
 });
 
+//get for single recipe /endpoint [maybe change the name]
+router.get('/recipes' , (req, res) => {
+  //renders the recipees handlebar that hosts the dynamically created front end JS
+  
+  res.render('recipes')
+})
 //login
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {

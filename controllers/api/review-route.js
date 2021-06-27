@@ -18,12 +18,14 @@ router.post('/', withAuth, (req, res) => {
     Reviews.create({
         title: req.body.title,
         review: req.body.review
-    }).then(dbOfferData => res.json(dbOfferData))
+    }).then(dbReviews => res.json(dbReviews))
     .catch(err => {
       console.log(err);
       res.status(400).json(err);
     });
 });
+
+//add a PUT
 
 //delete review
 router.delete('/:id', withAuth, (req, res) => {
