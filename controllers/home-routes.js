@@ -3,8 +3,8 @@ const { User, Recipes, Reviews, List } = require('../models')
 
 
 router.get('/', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
     return;
   }
 
