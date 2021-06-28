@@ -26,7 +26,23 @@ router.post('/', withAuth, (req, res) => {
 });
 
 //add a PUT
-
+router.put('/:id', withAuth, (req, res) => {
+  Reviews.update({
+    title: req.body.title,
+    review_text: req.body.review_text
+  },
+  {
+    where: {id: req.params.id}
+  }).then(dbReviews => {
+    if(!dbReviews) {
+      res.status(404).json({ message: 'no review with this id' });
+      return;
+    } res.json(dbReviews);
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
 //delete review
 router.delete('/:id', withAuth, (req, res) => {
     Reviews.destroy({
