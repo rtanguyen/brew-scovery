@@ -27,6 +27,31 @@ router.get('/', (req, res) => {
         });
 });
 //edit reviews
-
+router.get('/edit/:id', withAuth, (req, res) => {
+    Reviews.findOne({
+        where: {id: req.params.id },
+        attributes:  ['id', 'review_text', 'user_id', 'recipe_id'],
+        include: [
+            {
+                model: List,
+                attributes: ['list_name', 'ingredients_name']
+            }
+        ]
+    }).then(dbReviewsData => {
+        if (dbReviewsData) {
+          const post = dbReviewsData.get({ plain: true });
+          //include a view that renders an edit
+          res.render('edit-post', {
+            post,
+            loggedIn: true
+          });
+        } else {
+          res.status(404).end();
+        }
+      })
+      .catch(err => {
+        res.status(500).json(err);
+      });
+})
 //delete reviews
 module.exports = router;
