@@ -3,12 +3,12 @@ const router = require('express').Router();
 const userRoutes = require('./user-routes.js');
 const reviewRoutes = require('./review-routes');
 const recipes = require('./recipe-routes');
-const List = require('../../models/List.js');
+const listRoutes = require('./list-routes');
 
 
 router.use('/users', userRoutes);
 router.use('/reviews', reviewRoutes);
-//the shopping list?
+router.use('/lists', listRoutes)
 router.use('/recipes', recipes);
 
 module.exports = router;
