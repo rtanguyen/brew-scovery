@@ -386,6 +386,10 @@ text-decoration: none;
   .form-label-group input::-webkit-input-placeholder {
     color: transparent;
   }
+
+  .steps {
+    color: #E49600;
+  }
   
   .form-label-group input:-ms-input-placeholder {
     color: transparent;
