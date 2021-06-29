@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Recipes, Reviews, List } = require('../models')
-const withAuth = require('../../utils/auth');
+const withAuth = require('../utils/auth');
 
 //on dashboard renders the user account with all reviews and their list
 //my account page
