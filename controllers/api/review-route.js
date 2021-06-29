@@ -16,19 +16,19 @@ router.get('/', (req, res) => {
 //create a review
 router.post('/', withAuth, (req, res) => {
     Reviews.create({
-        title: req.body.title,
-        review: req.body.review
+        review_text: req.body.review,
+        api_id: req.body.api_io,
+        user_id: req.session.user_id
     }).then(dbReviews => res.json(dbReviews))
     .catch(err => {
       console.log(err);
-      res.status(400).json(err);
+      res.status(500).json(err);
     });
 });
 
 //add a PUT
 router.put('/:id', withAuth, (req, res) => {
   Reviews.update({
-    title: req.body.title,
     review_text: req.body.review_text
   },
   {
@@ -43,6 +43,7 @@ router.put('/:id', withAuth, (req, res) => {
     res.status(500).json(err);
   });
 })
+
 //delete review
 router.delete('/:id', withAuth, (req, res) => {
     Reviews.destroy({
