@@ -461,7 +461,9 @@ text-decoration: none;
     color: #fff;
   }
 
-  .signInCTA
+  .catBtn:hover {
+    border-bottom: 3px solid #E49600;
+  }
 
 /* HOMEPAGE */ 
 .recipeList {
