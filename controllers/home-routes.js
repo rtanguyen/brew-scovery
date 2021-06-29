@@ -3,19 +3,46 @@ const { User, Reviews, List } = require('../models')
 
 
 router.get('/', (req, res) => {
-
-
-  res.render('homepage');
+  User.findOne({
+    where: {
+      id: req.session.id
+    },
+    attributes: [
+      'username',
+      'user_image'
+    ]
+  }).then(dbUserData => {
+    const user = dbUserData;
+    res.render('homepage', {
+      user,
+      loggedIn: req.session.LoggedIn
+    });
+  })
 });
 
-//get for single recipe /endpoint [maybe change the name]
+//get for single recipe/:api id
 router.get('/recipe/:id' , (req, res) => {
-  res.render('recipe', {
-    loggedIn: true,
-    id: req.params.id,
-    //save user id to save new shopping list from recipe page
-    // list_id: req.sessions.user_id
+  Reviews.findAll({
+    where: { id: req.body.api_id
+    },
+    attributes: ['id', 'review_text', 'api_id', 'user_id', 'created_at'],
+    include: { 
+        model: User,
+        attributes: ['id', 'username', 'user_image']
+    }
+  }).then(dbReviewData => {
+    const reviews = dbReviewData.map(review => review.get({ plain: true }))
+    res.render('recipe', {
+      loggedIn: true,
+      id: req.params.id,
+      //save user id to save new shopping list from recipe page
+      // list_id: req.sessions.user_id
+    })
   })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+});
 })
 //login
 router.get('/login', (req, res) => {

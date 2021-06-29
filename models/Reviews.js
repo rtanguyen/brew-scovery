@@ -17,6 +17,10 @@ Reviews.init(
                 len: [1]
             }
         },
+        api_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
