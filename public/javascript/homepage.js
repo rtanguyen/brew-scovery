@@ -44,10 +44,12 @@ function displayRecipe(response) {
     let id = response[i].id;
 
     let recipeCard = $(`
-    <div class="card bg-transparent text-center" onclick="fetchSingleRecipe(${id})">
+    <div class="col-sm-4 my-4">
+    <div class="card bg-transparent text-center">
       <img class="card-img-top recipeImg" src="https://spoonacular.com/recipeImages/${id}-556x370.jpg">
       <div class="card-body">
-        <a class="recipe-title" id="${id}" href="#">${response[i].title}</a>
+        <a class="recipe-title card-text" id="${id}" href="#">${response[i].title}</a>
+        <button class="btn seeRecipe text-uppercase" onclick="fetchSingleRecipe(${id})" type="button">View recipe</button>
       </div>
     </div>
     `).appendTo(recipeCardsEl);
