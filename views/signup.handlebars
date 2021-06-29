@@ -13,8 +13,8 @@
                         <div class="row">
                             <div class="col-sm">
                             </div>
-                            <div class="col-sm">
-                                <img style="margin-left:25px;" class="rounded-circle profilePic" src="/assets/images/macaron.jpg" width="200" height="200" />
+                            <div class="col-sm" id="profilePicContainer">
+                              <img id="profile-pic" style="margin-left:25px;" class="rounded-circle profilePic pb-4" src="/images/hero.jpg" width="200" height="200" />
                             </div>
                             <div class="col-sm">
                             </div>
@@ -23,45 +23,48 @@
                         <tr><td>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col d-flex justify-content-end">
-                                        <input type="file" id="upload_widget" name="image" style="height: 30px; width: 100px;" class="mt-3">
+                                    <div class="col d-flex justify-content-end">                                      
+                                        <input type="text" class="form-control" placeholder="Browse for picture" aria-label="Recipient's username" aria-describedby="button-addon2" id="browse-input">
                                     </div>
                                     <div class="col">
                                         <button type="button" class="btn btn-outline-primary upload mx-5 mt-2" id="upload_widget">upload</button>
-                                    </div>
-                                </div>
-                            </div>
+                                      </div>
+                                  </div>
+                              </div>
                         </td></tr>
                     <p class="fillForm mt-3">Please fill in this form to create an account.</p>
-                    <form class="form-signin">
+                    <form class="signup-form">
                       <div class="form-label-group">
-                        <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
-                        <label for="inputUserame">Username/Email Address</label>
+                        <input type="text" id="username-signup" class="form-control" placeholder="Username" required autofocus>
+                        <label for="username-signup">Username/Email Address</label>
                       </div>
                       <hr>
                       <div class="form-label-group">
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                        <label for="inputPassword">Password</label>
+                        <input type="password" id="password-signup" class="form-control" placeholder="Password" required>
+                        <label for="password-signup">Password</label>
                       </div>
                       
                       <div class="form-label-group">
-                        <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required>
-                        <label for="inputConfirmPassword">Confirm password</label>
+                        <input type="password" class="form-control" placeholder="Password" required>
+                        <label for="password">Confirm password</label>
                       </div>
                       <div class="container btnSignUp">
                           <div class="row">
                               <div class="col"></div>
                               <div class="col d-flex justify-content-end">
                                 <button class="btn btn-lg btn-primary btn-block text-uppercase signUpBtn mx-1 signup-form" type="submit">Submit</button>
-                                <button class="btn btn-lg btn-primary btn-block text-uppercase signUpBtn" type="cancelbtn">Cancel</button>
                               </div>
                           </div>
                       </div>
                       <hr class="my-4">
-                      <a class="d-block text-center mt-2 small d-flex justify-content-end" href="/login.html">Log In</a>
+                      <a class="d-block text-center mt-2 small d-flex justify-content-end" href="/login">Log In</a>
                     </form>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+<script src="/javascript/signup.js"></script>
