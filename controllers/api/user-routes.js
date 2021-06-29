@@ -56,10 +56,17 @@ router.get('/:id', (req, res) => {
       password: req.body.password,
       user_image: req.body.user_image
     })
-      .then(dbUserData => 
-        {res.json(dbUserData)
+    .then((dbUserData) => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.user_image = dbUserData.user_image;
+        req.session.loggedIn = true; 
+        res.json(dbUserData)
+
         console.log(dbUserData);
-        })
+        });
+    })
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
