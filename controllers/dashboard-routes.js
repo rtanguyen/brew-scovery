@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 //on dashboard renders the user account with all reviews and their list
 //my account page
-router.get('/', (req, res) => {
+router.get('/',withAuth, (req, res) => {
     Reviews.findAll({
         where: {
             user_id: req.session.user_id
