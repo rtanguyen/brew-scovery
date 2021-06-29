@@ -43,24 +43,14 @@ function displayRecipe(response) {
   for (i = 0; i < response.length; i++) {
     let id = response[i].id;
 
-    let recipeContainer = $("<div>")
-      .addClass("card bg-transparent text-center")
-      .appendTo(recipeCardsEl);
-    let cardImg = $("<img>")
-      .addClass("card-img-top recipeImg")
-      .attr(
-        "src",
-        "https://spoonacular.com/recipeImages/" + id + "-556x370.jpg"
-      )
-      .appendTo(recipeContainer);
-    let cardBody = $("<div>").addClass("card-body").appendTo(recipeContainer);
-    let recipeTitle = $("<button>")
-      .addClass("btn btn-link")
-      .attr("type", "button")
-      .attr("name", "recipe-title")
-      .attr("value", id)
-      .text(response[i].title)
-      .appendTo(cardBody);
+    let recipeCard = $(`
+    <div class="card bg-transparent text-center" onclick="fetchSingleRecipe(${id})">
+      <img class="card-img-top recipeImg" src="https://spoonacular.com/recipeImages/${id}-556x370.jpg">
+      <div class="card-body">
+        <a class="recipe-title" id="${id}" href="#">${response[i].title}</a>
+      </div>
+    </div>
+    `).appendTo(recipeCardsEl);
   }
 }
 
