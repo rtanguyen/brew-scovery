@@ -23,10 +23,7 @@ List.init(  {
     ingredients_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      references: {
-        model: 'recipe',
-        key: 'id'
-      }
+      
     }
   },
   {
