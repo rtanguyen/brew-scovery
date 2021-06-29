@@ -25,19 +25,19 @@ User.hasMany(Reviews, {
   foreignKey: 'user_id'
 });
 
-Recipes.hasMany(Reviews, {
-  foreignKey: 'recipes_id'
-});
+// Recipes.hasMany(Reviews, {
+//   foreignKey: 'recipes_id'
+// });
 
 //user has one shopping list
 List.belongsTo(User, {
     foreignKey: 'user_id'
 })
 
-List.belongsToMany(Recipes, {
-    // through: Vote,
-    // as: 'voted_posts',
-    foreignKey: 'recipes_id'
-});
+// List.belongsToMany(Recipes, {
+//     // through: Vote,
+//     // as: 'voted_posts',
+//     foreignKey: 'recipes_id'
+// });
 
 module.exports = { User, List, Recipes, Reviews };
