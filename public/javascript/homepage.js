@@ -1,26 +1,34 @@
-let userInput = 'miso';
+
 let recipeCardsEl = document.querySelector('#recipeContainer');
 const categories = document.querySelectorAll(".btn-group > button.btn");
 let recipeId;
 
 
+// $(document).ready(function (event) {
+//   recipeFetch('miso')
+
+// })
 
 //==================== recipe cards on homepage ====================//
 //grab value from categories
   for(var i=0; i<categories.length; i++){
     categories[i].addEventListener("click", function(){
-      userInput = this.value;
+
+      console.log('hi');
+     let userInput = this.value;
+      console.log(userInput);
       recipeFetch(userInput)
     });
 }
 
 //grab value from search
 $('#search-form').on('click', function() {
-  userInput =  document.querySelector('#recipe-search').value.trim()
+ let userInput =  document.querySelector('#recipe-search').value.trim()
   recipeFetch(userInput)
 })
 
 var recipeFetch = function (input) {
+  $('#recipeContainer').empty();
   fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=" + input, {
     method: "GET",
     headers: {
@@ -31,7 +39,7 @@ var recipeFetch = function (input) {
   .then(function (response) {
     response.json().then(function (data) {
       console.log(data);
-      displayRecipe(data.response);
+      displayRecipe(data.results);
     });
   })
   .catch((err) => {
@@ -56,6 +64,7 @@ function displayRecipe(response) {
   }
 }
 
+recipeFetch('miso');
 
 // displayRecipe(dataSample)
 

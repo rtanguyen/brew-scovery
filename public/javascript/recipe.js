@@ -2,9 +2,8 @@ let recipeEl = document.querySelector('#recipeDetailsContainer');
 let ingredientName;
 
 
-
 //======= fetch/display recipe ======= //
-$(document).ready(function (event) {
+$(document).onload(function (event) {
   // console.log(recipeId);
   $('#recipeDetailsContainer').empty();
   getRecipe(recipeId);
