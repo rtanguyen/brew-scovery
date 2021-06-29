@@ -3,7 +3,7 @@ async function reviewFormHandler(event) {
 
     const review_text = document.querySelector('textarea[name="review-body"]').value.trim();
     const api_id = window.location.toString().split('/')[window.location.toString().split('/').length -1];
-
+    console.log(api_id)
     if(review_text) {
         const response = await fetch('/api/reviews', {
             method: 'POST',
