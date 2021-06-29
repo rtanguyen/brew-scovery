@@ -3,10 +3,7 @@ const { User, Reviews, List } = require('../models')
 
 
 router.get('/', (req, res) => {
-  if (!req.session.loggedIn) {
-    res.redirect('/landing');
-    return;
-  }
+
 
   res.render('homepage');
 });
@@ -31,6 +28,10 @@ router.get('/login', (req, res) => {
   });
 
 router.get('/signup', (req,res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
   res.render('signup')
 })
 

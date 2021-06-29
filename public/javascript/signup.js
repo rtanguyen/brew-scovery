@@ -1,4 +1,4 @@
-let image_url = "";
+let user_image = "";
 
 async function signupFormHandler(event) {
     event.preventDefault();
@@ -13,14 +13,14 @@ async function signupFormHandler(event) {
         body: JSON.stringify({
           username,
           password,
-          image_url
+          user_image
         }),
         headers: { 'Content-Type': 'application/json' }
       });
       //check response status
       if (response.ok) {
-        console.log(response);
-        // document.location.replace('/');
+        console.log('woohoo');
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }
@@ -34,14 +34,14 @@ var myWidget = cloudinary.createUploadWidget({
   uploadPreset: 'miso-hungry'}, (error, result) => { 
     if (!error && result && result.event === "success") { 
       console.log('Done! Here is the image info: ', result.info); 
-      image_url = result.info.secure_url
-      console.log(image_url);
+      user_image = result.info.secure_url
+      console.log(user_image);
 
       // let profilePicture = $(`
       // <img style="margin-left:25px;" class="rounded-circle profilePic" src=${image_url} width="200" height="200" />
       // `).appendTo('#profile-picture')
 
-      $('#profile-pic').attr('src', image_url);
+      $('#profile-pic').attr('src', user_image);
       $('#browse-input').attr('placeholder', result.info.original_filename)
     }
   }
