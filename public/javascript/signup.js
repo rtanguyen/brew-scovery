@@ -27,8 +27,6 @@ async function signupFormHandler(event) {
     }
   }
 
-  const response = await fetch('/api/list', {
-  }
 
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
 
