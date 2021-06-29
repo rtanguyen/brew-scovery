@@ -4,7 +4,7 @@ const { User, Reviews, List } = require('../models')
 
 router.get('/', (req, res) => {
   if (!req.session.loggedIn) {
-    res.redirect('/login');
+    res.redirect('/landing');
     return;
   }
 
