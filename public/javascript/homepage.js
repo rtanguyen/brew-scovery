@@ -2,9 +2,9 @@
 let recipeCardsEl = document.querySelector('#recipeContainer');
 const categories = document.querySelectorAll(".btn-group > button.btn");
 let recipeId;
-require('dotenv').config();
+// require('dotenv').config();
 
-const APIKey = process.env.API_KEY
+// const APIKey = process.env.API_KEY
 
 // $(document).ready(function (event) {
 //   recipeFetch('miso')
@@ -34,8 +34,8 @@ var recipeFetch = function (input) {
   fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=" + input, {
     method: "GET",
     headers: {
-      // "x-rapidapi-key": "30f04bca87mshb6f84916c7e0709p18c5ebjsne207a2d1ce23",
-      "x-rapidapi-key": APIKey,
+      "x-rapidapi-key": "30f04bca87mshb6f84916c7e0709p18c5ebjsne207a2d1ce23",
+      // "x-rapidapi-key": APIKey,
       "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
     },
   })
@@ -55,12 +55,12 @@ function displayRecipe(response) {
     let id = response[i].id;
 
     let recipeCard = $(`
-    <div class="col-sm-4 my-4">
+    <div class="col-sm-4 my-4" onclick="fetchSingleRecipe(${id})">
     <div class="card bg-transparent text-center">
       <img class="card-img-top recipeImg" src="https://spoonacular.com/recipeImages/${id}-556x370.jpg">
       <div class="card-body">
         <a class="recipe-title card-text" id="${id}" href="#">${response[i].title}</a>
-        <button class="btn seeRecipe text-uppercase" onclick="fetchSingleRecipe(${id})" type="button">View recipe</button>
+        <button class="btn seeRecipe text-uppercase"  type="button">View recipe</button>
       </div>
     </div>
     `).appendTo(recipeCardsEl);
