@@ -1,12 +1,9 @@
 const router = require('express').Router();
-const { User, Recipes, Reviews, List } = require('../models')
+const { User, Reviews, List } = require('../models')
 
 
 router.get('/', (req, res) => {
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-    return;
-  }
+
 
   res.render('homepage');
 });
@@ -29,5 +26,17 @@ router.get('/login', (req, res) => {
   
     res.render('login');
   });
-  
+
+router.get('/signup', (req,res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('signup')
+})
+
+router.get('/landing', (req,res) => {
+  res.render('landing')
+})
+
 module.exports = router;

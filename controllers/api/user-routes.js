@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Recipes, Reviews, List } = require('../../models')
+const { User, Reviews, List } = require('../../models')
 const withAuth = require('../../utils/auth');
 //get all users without pw
 router.get('/', (req, res) => {
@@ -17,27 +17,24 @@ router.get('/:id', (req, res) => {
       attributes: { exclude: ['password'] },
       where: {
         id: req.params.id
-      },
-      include: [
-        {
-          model: Recipes,
-          attributes: ['id', 'recipe_title', 'ingredients', 'instructions']
-        },
-        {
-          model: List,
-          attributes: ['id', 'list_name', 'ingredients_name'],
-          include: [
-          {
-            model: Post,
-            attributes: ['title']
-          },
-          {
-            model: Reviews,
-            attributes:['id', 'review_text', 'user_id', 'recipe_id']
-          }
-        ]
-        },
-      ]
+      }
+      // include: [
+      
+      //   {
+      //     model: List,
+      //     attributes: ['id', 'list_name', 'ingredients_name'],
+      //     include: [
+      //     {
+      //       model: Post,
+      //       attributes: ['title']
+      //     },
+      //     {
+      //       model: Reviews,
+      //       attributes:['id', 'review_text', 'user_id']
+      //     }
+      //   ]
+      //   },
+      // ]
     })
       .then(dbUserData => {
         if (!dbUserData) {
@@ -53,13 +50,23 @@ router.get('/:id', (req, res) => {
   });
 
   //user post
-  router.post('/', withAuth, (req, res) => {
+  router.post('/', (req, res) => {
     User.create({
       username: req.body.username,
       password: req.body.password,
       user_image: req.body.user_image
     })
-      .then(dbUserData => res.json(dbUserData))
+    .then((dbUserData) => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.user_image = dbUserData.user_image;
+        req.session.loggedIn = true; 
+        res.json(dbUserData)
+
+        console.log(dbUserData);
+        });
+    })
       .catch(err => {
         console.log(err);
         res.status(500).json(err);

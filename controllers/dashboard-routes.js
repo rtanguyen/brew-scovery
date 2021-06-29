@@ -1,15 +1,15 @@
 const router = require('express').Router();
-const { User, Recipes, Reviews, List } = require('../models')
+const { User, Reviews, List } = require('../models')
 const withAuth = require('../utils/auth');
 
 //on dashboard renders the user account with all reviews and their list
 //my account page
-router.get('/', (req, res) => {
+router.get('/',withAuth, (req, res) => {
     Reviews.findAll({
         where: {
             user_id: req.session.user_id
         },
-        attributes: ['id', 'review_text', 'user_id', 'recipe_id'],
+        attributes: ['id', 'review_text', 'user_id'],
         include: [{model: User,
             atrributes: ['username']},
         ]},
@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
 router.get('/edit/:id', withAuth, (req, res) => {
     Reviews.findOne({
         where: {id: req.params.id },
-        attributes:  ['id', 'review_text', 'user_id', 'recipe_id'],
+        attributes:  ['id', 'review_text', 'user_id'],
         include: [
             {
                 model: List,

@@ -1,1 +1,29 @@
-      <div id="recipeContainer"></div>
+    <div class="jumbotron homeJumbo"> 
+      {{!-- <img src="/assets/images/brenan-greene-HPZs4EXRFSU-unsplash.jpg" class="img-r img-fluid"> --}}
+    </div>
+
+
+
+  <div class="container my-4 categoryOptions">
+    <div class="row">
+      <!-- RECIPE CATEGORIES -->
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn catBtn" name="category" value="main course">main course</button>
+        <button type="button" class="btn catBtn" name="category" value="side dish">side dish</button>
+        <button type="button" class="btn catBtn" name="category" value="appetizer">appetizer</button>
+        <button type="button" class="btn catBtn" name="category" value="salad">salad</button>
+        <button type="button" class="btn catBtn" name="category" value="dessert">dessert</button>
+        <form class="d-flex search-form">
+          <input class="form-control me-2 searchField" type="search" placeholder="Search" aria-label="recipe search" id="recipe-search">
+            <button class="btn btn-outline-success searchBtn" type="button" id="search-btn">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>     
+      
+      <div id="recipeContainer">
+
+      </div>
+
+
+  <script src="/javascript/homepage.js"></script>
