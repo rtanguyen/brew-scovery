@@ -1,7 +1,7 @@
 // import all models
 const List = require('./List');
 const User = require('./User');
-const Recipes = require('./Recipe');
+
 const Reviews = require('./Reviews')
 
 // create associations
@@ -40,4 +40,4 @@ List.belongsTo(User, {
 //     foreignKey: 'recipes_id'
 // });
 
-module.exports = { User, List, Recipes, Reviews };
+module.exports = { User, List, Reviews };
