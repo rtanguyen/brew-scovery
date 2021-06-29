@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     Reviews.create({
         review_text: req.body.review,
-        api_id: req.body.api_io,
+        api_id: req.body.api_id,
         user_id: req.session.user_id
     }).then(dbReviews => res.json(dbReviews))
     .catch(err => {
