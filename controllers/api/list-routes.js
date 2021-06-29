@@ -1,6 +1,6 @@
 //LIST routes
 const router = require('express').Router();
-const { User, Recipes, Reviews, List } = require('../../models')
+const { User, Reviews, List } = require('../../models')
 const withAuth = require('../../utils/auth');
 
 

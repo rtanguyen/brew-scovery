@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Recipes, Reviews, List } = require('../../models')
+const { User, Reviews, List } = require('../../models')
 const withAuth = require('../../utils/auth');
 //get all users without pw
 router.get('/', (req, res) => {
@@ -19,10 +19,7 @@ router.get('/:id', (req, res) => {
         id: req.params.id
       },
       include: [
-        {
-          model: Recipes,
-          attributes: ['id', 'recipe_title', 'ingredients', 'instructions']
-        },
+      
         {
           model: List,
           attributes: ['id', 'list_name', 'ingredients_name'],
@@ -33,7 +30,7 @@ router.get('/:id', (req, res) => {
           },
           {
             model: Reviews,
-            attributes:['id', 'review_text', 'user_id', 'recipe_id']
+            attributes:['id', 'review_text', 'user_id']
           }
         ]
         },
