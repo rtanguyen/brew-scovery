@@ -1,6 +1,18 @@
-<div class="reviews">
-    <div>
-        <img src="{{PLACEHOLDER}}">
-    </div>
-    <div ></div>
+<div class="reviews" id="{{id}}">
+    <section class="review">
+      <div>
+        <img src="{{user.user_image}}" />
+      </div>
+      <div>
+        {{user.username}}
+        on
+        {{format_date created_at}}
+      </div>
+      <div class="text">
+        {{review_text}}
+      </div>
+        <button type="button" class="edit-review-btn" id="user-{{user.id}} edit-{{id}}">edit</button>
+        <button type="button" class="delete-review-btn" id="user-{{user.id}} delete-{{id}}">delete</button>
+    </section>
+
 </div>
