@@ -1,6 +1,7 @@
 let userInput = 'miso';
 let recipeCardsEl = document.querySelector('#recipeContainer');
 const categories = document.querySelectorAll(".btn-group > button.btn");
+let recipeId;
 
 
 
@@ -42,24 +43,14 @@ function displayRecipe(response) {
   for (i = 0; i < response.length; i++) {
     let id = response[i].id;
 
-    let recipeContainer = $("<div>")
-      .addClass("card bg-transparent text-center")
-      .appendTo(recipeCardsEl);
-    let cardImg = $("<img>")
-      .addClass("card-img-top recipeImg")
-      .attr(
-        "src",
-        "https://spoonacular.com/recipeImages/" + id + "-556x370.jpg"
-      )
-      .appendTo(recipeContainer);
-    let cardBody = $("<div>").addClass("card-body").appendTo(recipeContainer);
-    let recipeTitle = $("<button>")
-      .addClass("btn btn-link")
-      .attr("type", "button")
-      .attr("name", "recipe-title")
-      .attr("value", id)
-      .text(response[i].title)
-      .appendTo(cardBody);
+    let recipeCard = $(`
+    <div class="card bg-transparent text-center" onclick="fetchSingleRecipe(${id})">
+      <img class="card-img-top recipeImg" src="https://spoonacular.com/recipeImages/${id}-556x370.jpg">
+      <div class="card-body">
+        <a class="recipe-title" id="${id}" href="#">${response[i].title}</a>
+      </div>
+    </div>
+    `).appendTo(recipeCardsEl);
   }
 }
 
@@ -77,6 +68,8 @@ $(document).ready(function () {
 });
 
 const fetchRecipeDetails = (id) => {
+  console.log(id);
+  console.log('hi');
   fetch(
     "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" +
       id +
@@ -84,41 +77,50 @@ const fetchRecipeDetails = (id) => {
     {
       method: "GET",
       headers: {
-        "x-rapidapi-key": "30f04bca87mshb6f84916c7e0709p18c5ebjsne207a2d1ce23",
+        "x-rapidapi-key": "d020ffed6amsh9102480cca766bbp115709jsn6f2ff5ea985b",
         "x-rapidapi-host":
           "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
       },
     }
   ).then(function (response) {
-    response
-      .json()
-      .then(function (data) {
-        console.log(data);
-        recipe = parseRecipeRes(data);
-        displaySingleRecipe(recipe)
-      })
+    response.json().then(function (response) {
+      let recipe = {};
+      recipe.name = response.title;
+      recipe.ingredients = [];
+      recipe.image = response.image;
+      recipe.instructions = response.instructions
+    
+      let ingredientsArr = response.extendedIngredients;
+      for (let i = 0; i < ingredientsArr.length; i++) {
+        var ingredient = response.extendedIngredients[i].originalString;
+    
+        recipe.ingredients.push(ingredient);
+      }
+      console.log(recipe);
+      return recipe;
+      }).then(recipe => displaySingleRecipe(recipe))
       .catch((err) => {
         console.error(err);
       });
   });
 };
 
-function parseRecipeRes(response) {
-  let recipe = {};
-  recipe.name = response.title;
-  recipe.ingredients = [];
-  recipe.image = response.image;
-  recipe.instructions = response.instructions
+// function parseRecipeRes(response) {
+//   let recipe = {};
+//   recipe.name = response.title;
+//   recipe.ingredients = [];
+//   recipe.image = response.image;
+//   recipe.instructions = response.instructions
 
-  let ingredientsArr = response.extendedIngredients;
-  for (let i = 0; i < ingredientsArr.length; i++) {
-    var ingredient = response.extendedIngredients[i].originalString;
+//   let ingredientsArr = response.extendedIngredients;
+//   for (let i = 0; i < ingredientsArr.length; i++) {
+//     var ingredient = response.extendedIngredients[i].originalString;
 
-    recipe.ingredients.push(ingredient);
-  }
-  // console.log(recipe);
-  return recipe;
-}
+//     recipe.ingredients.push(ingredient);
+//   }
+//   // console.log(recipe);
+//   return recipe;
+// }
 
 function displaySingleRecipe(recipe) {
     let recipeContainer = $("<div>").appendTo(recipeDetailsEl);
@@ -132,3 +134,6 @@ function displaySingleRecipe(recipe) {
       let ingredients = $("<p>").text(recipe.ingredients[i]).appendTo(ingredientsContainer)
     }
   }
+
+
+  
