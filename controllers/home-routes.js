@@ -12,10 +12,13 @@ router.get('/', (req, res) => {
 });
 
 //get for single recipe /endpoint [maybe change the name]
-router.get('/recipes' , (req, res) => {
-  //renders the recipees handlebar that hosts the dynamically created front end JS
-  
-  res.render('recipes')
+router.get('/recipe/:id' , (req, res) => {
+  res.render('recipe', {
+    loggedIn: true,
+    id: req.params.id,
+    //save user id to save new shopping list from recipe page
+    // list_id: req.sessions.user_id
+  })
 })
 //login
 router.get('/login', (req, res) => {
