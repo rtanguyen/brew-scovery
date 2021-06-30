@@ -68,21 +68,46 @@ function parseRecipeRes(response) {
 function displaySingleRecipe(recipe) {
   console.log(recipe.ingredients);
 
-    let recipeContainer = $("<div>").appendTo(recipeEl);
-    let recipeName = $('<h2>').text(recipe.name).appendTo(singleRecipeTitle);
-    let recipeImg = $("<img>").attr("src", recipe.image).appendTo(singleRecipeImage);
-    let recipeBodyContainer = $('<div>').appendTo(recipeContainer);
-    let ingredientsContainer = $('<div>').addClass('ingredients-container row').appendTo(singleRecipeTitle)
-    let measurements = $('<div>').addClass('col-1').appendTo(ingredientsContainer)
-    // let space = $('<div>').addClass('col-1').appendTo(ingredientsContainer)
-    let ingredientsEl = $('<div>').addClass('col-2').appendTo(ingredientsContainer).attr('id', 'ingredientsList')
+  let singleRecipeDetails = $(`
+      <div class="row justify-content-center mb-5">
+      <h2 class="mb-3">${recipe.name}</h2>
+      <img class="mb-3" src="${recipe.image}">
+      <div>
+        <div>${recipe.instructions}.</div>
+      </div>
+    </div>
+    <div class="container text-center align-content-center mb-5" >
+      <div class="ingredients-container row justify-content-center" id="ingredients-container">
+      <div class="col-2" id="ingredients-measurement"></div>
+      <div class="col-4" id="ingredientsList"></div>
 
-    let instructions = $('<div>').text(recipe.instructions).appendTo(recipeBodyContainer)
+      </div>
+      </div>
+      </div>
+
+      `).appendTo(recipeEl)
+
+
+
+    // let recipeContainer = $("<div>").appendTo(recipeEl);
+    // let recipeName = $('<h2>').text(recipe.name).appendTo(recipeContainer);
+    // let recipeImg = $("<img>").attr("src", recipe.image).appendTo(recipeContainer);
+    // let recipeBodyContainer = $('<div>').appendTo(recipeContainer);
+    // let ingredientsContainer = $('<div>').addClass('ingredients-container row').appendTo(recipeContainer)
+    // let measurements = $('<div>').addClass('col-1').appendTo(ingredientsContainer)
+    // // let space = $('<div>').addClass('col-1').appendTo(ingredientsContainer)
+    // let ingredientsEl = $('<div>').addClass('col-2').appendTo(ingredientsContainer).attr('id', 'ingredientsList')
+
+    // let instructions = $('<div>').text(recipe.instructions).appendTo(recipeBodyContainer)
 
     for (var i = 0; i < recipe.ingredients.length; i++) {
-      let measurement = $("<p>").text(recipe.measurement[i]).appendTo(measurements)
+      let measurement = $("<p>").text(recipe.measurement[i]).appendTo($('#ingredients-measurement'))
       // $('<p>').text('...........').appendTo(space)
-      let ingredientName = $("<p>").text(recipe.ingredientsName[i]).appendTo(ingredientsEl)
+      // let ingredientName = $("<p>").text(recipe.ingredientsName[i]).appendTo($('.ingredientsList'))
+}
+
+for (var i = 0; i < recipe.ingredients.length; i++) {
+  let ingredientName = $("<p>").text(recipe.ingredientsName[i]).appendTo($('#ingredientsList'))
 }
 }
     
