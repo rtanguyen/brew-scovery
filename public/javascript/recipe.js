@@ -3,10 +3,12 @@ let ingredientName;
 
 
 //======= fetch/display recipe ======= //
-$(document).onload(function (event) {
-  // console.log(recipeId);
+$(window).ready(function (event) {
+
+
   $('#recipeDetailsContainer').empty();
   getRecipe(recipeId);
+  
 })
 
 const getRecipe = (recipeId) => {
