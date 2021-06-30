@@ -3,31 +3,29 @@
   <p><p>
 </div>
 
-<h2 style="text-align:center">About Me</h2>
 
 <ul class="nav nav-pills">
   <li class="nav-item">
-    <a class="nav-link active" href="/views/myaccount.handlebars">My Account</a>
+    <a class="nav-link active" href="/dashboard">reviews</a>
   </li>
+
   <li class="nav-item">
-    <a class="nav-link" href="/views/homepage.handlebars">Home</a>
+    <a class="nav-link" href="/dashboard/list/1">shopping</a>
   </li>
 </ul>
-
 
 <div class="row">
   <div class="column">
     <div class="card">
-      <img src="https://via.placeholder.com/300.png/" alt="Placeholder" style="width:100%">
+
+      {{!-- <img src="https://via.placeholder.com/300.png/" alt="Placeholder" style="width:100%"> --}}
       <div class="container">
         {{#if reviews.length}}
 <section>
   <h2>My reviews</h2>
-  <ol> 
     {{#each reviews as |review|}}
     <div>
-    <li>
-      {{review.review_text}}</li>
+      {{review.review_text}}
       <p><a href="/dashboard/edit/{{review.id}}" class="edit-link">Edit post</a></p>
       {{!-- BUTTONS --}}   
 {{!-- <button type="button" class="delete-review-btn" id="user-{{user.id}} edit-{{id}}">delete</button> --}}
@@ -51,13 +49,15 @@ edit</button> --}}
 </div>
 </div> --}}
     {{/each}}
-  </ol>
 </section>
 {{/if}}
       </div>
     </div>
   </div>
 </div>
+<script>
+const user.dataValues.user_image = {{review.user.user_image}}
 
+</script>
 {{!-- <script src="/javascript/delete-review.js"></script>
 <script src="/javascript/edit--review.js"></script> --}}
