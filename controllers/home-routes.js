@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
   }).then(dbUserData => {
     const user = dbUserData;
     console.log(user)
-    res.render('homepage', {
+    res.render('landing', {
       user,
       loggedIn: req.session.loggedIn
     });
@@ -77,6 +77,10 @@ router.get('/myaccount', (req,res) => {
 
 router.get('/landing', (req,res) => {
   res.render('landing')
+})
+
+router.get('/homepage', (req,res) => {
+  res.render('homepage')
 })
 
 module.exports = router;

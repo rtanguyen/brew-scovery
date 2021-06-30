@@ -1,16 +1,23 @@
-<h2 style="text-align:center">Recipes</h2>
-<div class="row">
-<!-- recipes -->
-<button type="button" id="add-list-btn">+ shopping</button>
-<div id="recipeDetailsContainer"></div>
+  <div class="recipePgTitle text-center">
+    <h1>Looks delish!</h1>
+  </div>
 
-<!-- submit a review -->
-<form class="review-form">
-<div>
-    <textarea class="form-control" name="review-body" rows="3"></textarea>
+  <div class="container singleRecipeData">
+    <div class="row">
+  <!-- recipes -->
+  {{!-- <button type="button" id="add-list-btn">+ shopping</button> --}}
+  <div id="recipeDetailsContainer">
+
+  </div>
 </div>
-<button type="submit" id="submit-review-btn">Submit a Review!</button>
-</form>
+  <!-- submit a review -->
+  <form class="review-form">
+  <div>
+      <textarea class="form-control" name="review-body" rows="3"></textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-lg btn-primary submiReview btn-block text-uppercase signUpBtn mx-1 signup-form" id="submit-review-btn">Submit a Review!</button>
+  </form>
 
  {{!-- {{> reviews review}} --}}
 
