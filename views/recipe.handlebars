@@ -41,11 +41,17 @@
   </form>
 </div>
 
+
  {{!-- {{> reviews review}} --}}
+ <div class="container">
+  <h3 class="reviewRecipeTitle">Reviews</h4>
+</div>
+ <div class="reviewBox">
 {{#each reviews as |review|}}
   {{!-- {{review.review_text}} --}}
   {{>reviews-info review}}
 {{/each}}
+</div>
 
 <script>
   const recipeId = {{id}}
