@@ -57,12 +57,12 @@ function displayRecipe(response) {
     let id = response[i].id;
 
     let recipeCard = $(`
-    <div class="col-sm-4 my-4" onclick="fetchSingleRecipe(${id})">
-    <div class="card bg-transparent text-center">
-      <img class="card-img-top recipeImg" src="https://spoonacular.com/recipeImages/${id}-556x370.jpg">
-      <div class="card-body">
-        <a class="recipe-title card-text" id="${id}" href="#">${response[i].title}</a>
-        <button class="btn seeRecipe text-uppercase"  type="button">View recipe</button>
+    <div class="col-sm-4 my-4">
+    <div class="card" style="width: 18rem;" id="recipeContainer">
+      <img class="card-img-top recipeImg" src="https://spoonacular.com/recipeImages/${id}-556x370.jpg" alt="recipeImage" >
+      <div class="card-body text-center">
+        <p class="recipe-title card-text fs-3" id="${id}" href="#">${response[i].title}</p>
+        <button class="btn seeRecipe text-uppercase" id="${id}" href="#" type="button" onclick="fetchSingleRecipe(${id})">View recipe</button>
       </div>
     </div>
     `).appendTo(recipeCardsEl);
@@ -151,6 +151,13 @@ function displaySingleRecipe(recipe) {
   }
 
 
+  const fetchSingleRecipe = id => {
+    console.log(id);
+    fetch('/recipe/' + id)
+      .then(function(response) {
+        console.log(response);
+      }) 
+  }
 
 //DISPLAY ON LOAD
 let initialData = [
