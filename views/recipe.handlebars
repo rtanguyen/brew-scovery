@@ -12,13 +12,14 @@
 <button type="submit" id="submit-review-btn">Submit a Review!</button>
 </form>
 
+ {{> reviews}}
 
 <script>
   const recipeId = {{id}}
 </script>
-<script>
+{{!-- <script>
   const listId = {{list_id}}
-</script>
+</script> --}}
   {{!-- <script src="/javascript/homepage.js"></script> --}}
   <script src="/javascript/recipe.js"></script>
   <script src="/javascript/add-review.js"></script>
