@@ -57,9 +57,9 @@ function displayRecipe(response) {
     let id = response[i].id;
 
     let recipeCard = $(`
-    <div class="col-sm-4 my-4">
-    <div class="card" style="width: 18rem;" id="recipeContainer">
-      <img class="card-img-top recipeImg" src="https://spoonacular.com/recipeImages/${id}-556x370.jpg" alt="recipeImage" >
+    <div class="col-sm-4 my-4 d-flex justify-content-center">
+    <div class="card" style="width: 22rem;" id="recipeContainer">
+      <img class="card-img-top recipeImg img-fluid" src="https://spoonacular.com/recipeImages/${id}-556x370.jpg" alt="recipeImage" >
       <div class="card-body text-center">
         <p class="recipe-title card-text fs-3" id="${id}" href="#">${response[i].title}</p>
         <button class="btn seeRecipe text-uppercase" id="${id}" href="#" type="button" onclick="fetchSingleRecipe(${id})">View recipe</button>
@@ -82,9 +82,10 @@ const fetchSingleRecipe = id => {
       'Accept': 'application/json'
      }
   })
-  .then((response) => response.json())
+  .then((response) => {response.json()})
   .then((messages) => {console.log("messages");});
 }
+
     // .then((function(response) {
     //   console.log(response);
     // })
@@ -110,13 +111,13 @@ const fetchSingleRecipe = id => {
 // };
 
 
-  const fetchSingleRecipe = id => {
-    console.log(id);
-    fetch('/recipe/' + id)
-      .then(function(response) {
-        console.log(response);
-      }) 
-  }
+  // const fetchSingleRecipe = id => {
+  //   console.log(id);
+  //   fetch('/recipe/' + id)
+  //     .then(function(response) {
+  //       console.log(response);
+  //     }) 
+  // }
 
 //DISPLAY ON LOAD
 let initialData = [
