@@ -1,52 +1,22 @@
+<br>
 <div class="about-section">
-  <h1>My Reviews</h1>
+  <h1 class="mx-5">My Reviews</h1>
   <p><p>
 </div>
 
 
-{{!-- <ul class="nav nav-pills">
-  <li class="nav-item">
-    <a class="nav-link active" href="/myaccount">My Account</a>
-    <a class="nav-link active" href="/dashboard">reviews</a>
-  </li>
-</ul>
-  </li>
-</ul> --}}
-
 <div class="row">
   <div class="column">
     <div class="card">
-
-      {{!-- <img src="https://via.placeholder.com/300.png/" alt="Placeholder" style="width:100%"> --}}
       <div class="container">
         {{#if reviews.length}}
 <section>
-  {{!-- <h2>My reviews</h2> --}}
     {{#each reviews as |review|}}
-    <div>
-      {{review.review_text}}
-      <p><a href="/dashboard/edit/{{review.id}}" class="edit-link">Edit post</a></p>
-      {{!-- BUTTONS --}}   
-{{!-- <button type="button" class="delete-review-btn" id="user-{{user.id}} edit-{{id}}">delete</button> --}}
-{{!-- <button type="button" class="btn btn-primary edit-review-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="user-{{user.id}} edit-{{id}}" value="{{content}}">
-edit</button> --}}
-{{!-- MODAL --}}
-{{!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <textarea class="form-control" rows="3" id="edit-post-content">{{content}}</textarea>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary " data-bs-dismiss="modal" name="save-btn-modal" id="user-{{user.id}} edit-{{id}}">Save</button>
-      </div>
+    <div class="border border-1 mb-1" id="dashboard-reviews">
+      <p class="mx-3 pt-2">{{review.review_text}}</p>
+      <p><a href="/dashboard/edit/{{review.id}}" class="edit-link btn btn-lg btn-primary btn-block text-uppercase signUpBtn mx-5 signup-form">Edit post</a></p>
+
     </div>
-  </div>
-</div>
-</div> --}}
     {{/each}}
 </section>
 {{/if}}
@@ -54,6 +24,7 @@ edit</button> --}}
     </div>
   </div>
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <script>
 const user.dataValues.user_image = {{review.user.user_image}}
 
