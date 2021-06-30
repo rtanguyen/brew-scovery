@@ -1,17 +1,17 @@
 <div class="about-section">
-  <h1>My Account</h1>
+  <h1>My Reviews</h1>
   <p><p>
 </div>
 
 
-<ul class="nav nav-pills">
+{{!-- <ul class="nav nav-pills">
   <li class="nav-item">
     <a class="nav-link active" href="/myaccount">My Account</a>
     <a class="nav-link active" href="/dashboard">reviews</a>
   </li>
 </ul>
   </li>
-</ul>
+</ul> --}}
 
 <div class="row">
   <div class="column">
@@ -21,7 +21,7 @@
       <div class="container">
         {{#if reviews.length}}
 <section>
-  <h2>My reviews</h2>
+  {{!-- <h2>My reviews</h2> --}}
     {{#each reviews as |review|}}
     <div>
       {{review.review_text}}
