@@ -2,9 +2,9 @@
 let recipeCardsEl = document.querySelector('#recipeContainer');
 const categories = document.querySelectorAll(".btn-group > button.btn");
 let recipeId;
-require('dotenv').config();
+// require('dotenv').config();
 
-const APIKey = process.env.API_KEY
+// const APIKey = process.env.API_KEY
 
 // $(document).ready(function (event) {
 //   recipeFetch('miso')
@@ -35,8 +35,8 @@ var recipeFetch = function (input) {
     method: "GET",
     headers: {
       // "x-rapidapi-key": "30f04bca87mshb6f84916c7e0709p18c5ebjsne207a2d1ce23",
-      "x-rapidapi-key": APIKey,
-      "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+      // "x-rapidapi-key": APIKey,
+      // "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
     },
   })
   .then(function (response) {

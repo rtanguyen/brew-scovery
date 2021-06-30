@@ -3,9 +3,10 @@ const { User, Reviews, List } = require('../models')
 
 
 router.get('/', (req, res) => {
+  console.log("SESSION", req.session)
   User.findOne({
     where: {
-      id: req.session.id
+      id: req.session.user_id
     },
     attributes: [
       'username',
@@ -13,9 +14,10 @@ router.get('/', (req, res) => {
     ]
   }).then(dbUserData => {
     const user = dbUserData;
+    console.log(user)
     res.render('homepage', {
       user,
-      loggedIn: req.session.LoggedIn
+      loggedIn: req.session.loggedIn
     });
   })
 });
