@@ -1,0 +1,18 @@
+<div class="reviews" id="{{id}}">
+    <section class="review">
+      <div>
+        <img src="{{user.user_image}}" />
+      </div>
+      <div>
+        {{user.username}}
+        on
+        {{format_date user.createdAt}}
+      </div>
+      <div class="text">
+        {{review_text}}
+      </div>
+
+        {{!-- <button type="button" class="delete-review-btn" id="user-{{user.id}} delete-{{id}}">delete</button> --}}
+    </section>
+
+</div>
