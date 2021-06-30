@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400i|Rubik" rel="stylesheet">
+    
+    
+    <!-- FONT AWESOME IMPORT  --> 
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+			src="https://kit.fontawesome.com/f78f1848e0.js"
+			crossorigin="anonymous"
+		></script>
+
+    <!-- GOOGLE FONT IMPORT  --> 
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chicle&display=swap');
+    </style>
+    <title>Miso Hungry</title>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/landing"><span class="miso">Miso</span> <span class="hungry">Hungry</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      {{#if loggedIn}}
+      <div class="collapse" style="
+      display: flex;
+      flex-grow: none;" id="navbarSupportedContent">
+      <p class="welcome text-end">Welcome, <br>{{review.user.username}}</p>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
+              <img src="{{user.user_image}}" width="40" height="40" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item myAccountNav" href="/myaccount">My account</a></li>
+              <li><a class="dropdown-item logOutNav" href="/landing">Log out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      {{else}}
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Log In</a>
+            </li>
+          </ul>
+      {{/if}}
+    </div>
+  </nav>
+
+
+
+
+</header>
+      {{{ body }}}
+      {{reviews.review_text}}
+      <div id="recipeContainer"></div>
+    </main>
+            
+
+
+      <div class="prefooter">
+        <div class="row text-center">
+          <div class="col-4 fw-bold">SITE MAP</div>
+          <div class="col-4 fw-bold">HELPFUL LINKS</div>
+          <div class="col-4 fw-bold">COMMUNITY</div>
+			  </div>
+        <div class="row text-center">
+          <div class="col-4 footsm"><a class="sm" href="/signup">Sign up</a></div>
+          <div class="col-4 footsm"><a class="sm" href="#">Terms and Conditions</a></div>
+          <div class="col-4 footsm"><a class="sm" href="#">Local produce</a></div>
+			  </div>
+        <div class="row text-center">
+          <div class="col-4 footsm"><a class="sm" href="/login">Log in</a></div>
+          <div class="col-4 footsm"><a class="sm" href="#">Help</a></div>
+          <div class="col-4 footsm"><a class="sm" href="#">Give Back</a></div>
+			  </div>
+        <div class="row text-center">
+          <div class="col-4 footsm"><a class="sm" href="#">About Us</a></div>
+          <div class="col-4 footsm"><a class="sm" href="#">Contact us</a></div>
+          <div class="col-4 footsm"></div>
+			  </div>
+        <div class="content has-text-centered container">
+          <div class="row text-center">
+            <div class="col-12">
+              <a class="sm px-2" href="https://twitter.com/?lang=en" target="_blank"><i class="fab fa-twitter socialMedia"></i></a>
+              <a class="sm px-2" href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest-p socialMedia"></i></a>
+              <a class="sm px-2" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square socialMedia"></i></a>
+              <a class="sm px-2" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram socialMedia"></i></a>
+              <!-- <p class="connect footsm">connect with us</p> -->
+            </div>
+          </div>
+      </div>
+        
+    <!-- FOOTER -->
+		<footer class="footer pt-2 mt-4">
+        <div class="content has-text-centered container">
+          <div class="row text-center">
+            <div class="col-12 footsm">
+              <p>Special thanks to: Rebecca N. | Ronnie R. | Byrant U. | Mimi V.</p>
+            </div>
+          </div>
+        </div>
+		  </footer>
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    {{!-- <script src="javascript/shopping-list.js"></script> --}}
+    {{!-- <script src="javascript/homepage.js"></script> --}}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+<!-- {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{!-- <script>Handlebars.compile($('#t').html())</script> --}}
+  {{/if}}
+
+</body>
+</html>
