@@ -31,18 +31,18 @@ router.get('/edit/:id', withAuth, (req, res) => {
     Reviews.findOne({
         where: {id: req.params.id },
         attributes:  ['id', 'review_text', 'user_id'],
-        include: [
-            {
-                model: List,
-                attributes: ['list_name', 'ingredients_name']
-            }
-        ]
+        // include: [
+        //     {
+        //         model: List,
+        //         attributes: ['list_name', 'ingredients_name']
+        //     }
+        // ]
     }).then(dbReviewsData => {
         if (dbReviewsData) {
-          const post = dbReviewsData.get({ plain: true });
+          const review = dbReviewsData.get({ plain: true });
           //include a view that renders an edit
-          res.render('edit-post', {
-            post,
+          res.render('dashboard', {
+            review,
             loggedIn: true
           });
         } else {
