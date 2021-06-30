@@ -1,6 +1,6 @@
 let recipeCardsEl = document.querySelector('#recipeContainer');
 const categories = document.querySelectorAll(".btn-group > button.btn");
-let recipeId;
+// let recipeId;
 // require('dotenv').config();
 
 // const APIKey = process.env.API_KEY
@@ -34,7 +34,7 @@ var recipeFetch = function (input) {
     method: "GET",
     headers: {
 
-      "x-rapidapi-key": "30f04bca87mshb6f84916c7e0709p18c5ebjsne207a2d1ce23",
+      "x-rapidapi-key": "34dff35736msh55aa38c64ff1987p1a7defjsn975b941ff55a",
       // "x-rapidapi-key": APIKey,
       "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
 
