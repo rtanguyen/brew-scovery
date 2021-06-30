@@ -26,7 +26,7 @@
     font-size: 12px;
   }
 
-  
+
 .categoryOptions {
   background: #fff;
 }
@@ -482,6 +482,11 @@ text-decoration: none;
 /* HOMEPAGE */ 
 .recipeList {
   margin-top: 50px
+}
+
+.reviewRecipeTitle {
+    color: #E49600;
+    border-bottom: 2px #777;
 }
 
 .recipebutton span {
