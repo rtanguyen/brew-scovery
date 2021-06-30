@@ -30,7 +30,7 @@ $('#search-form').on('click', function() {
 
 var recipeFetch = function (input) {
   $('#recipeContainer').empty();
-  fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=" + input, {
+  fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=" + input + "&number=15", {
     method: "GET",
     headers: {
 
