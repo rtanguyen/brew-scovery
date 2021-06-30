@@ -69,11 +69,11 @@ function displaySingleRecipe(recipe) {
   console.log(recipe.ingredients);
 
   let singleRecipeDetails = $(`
-      <div class="row justify-content-center mb-5">
-      <h2 class="mb-3">${recipe.name}</h2>
-      <img class="mb-3" src="${recipe.image}">
+      <div class="row mb-5 ">
+      <h2 class="mb-3 text-start">${recipe.name}</h2>
+      <img class="mb-3 text-center" src="${recipe.image}" style="width: 800px">
       <div>
-        <div>${recipe.instructions}.</div>
+      <div><p>${recipe.instructions}</p></div>
       </div>
     </div>
     <div class="container text-center align-content-center mb-5" >
