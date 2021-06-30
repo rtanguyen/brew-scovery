@@ -37,11 +37,11 @@
       <div class="collapse" style="
       display: flex;
       flex-grow: none;" id="navbarSupportedContent">
+      <p class="welcome text-end">Welcome, <br>{{user.dataValues.username}}</p>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
               <img src="{{user.dataValues.user_image}}" width="40" height="40" class="rounded-circle">
-              <div>{{user.dataValues.username}}</div>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="/myaccount">My account</a></li>
