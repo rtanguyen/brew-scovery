@@ -20,7 +20,7 @@ router.get('/',withAuth, (req, res) => {
             const reviews = dbReviewsData.map(review => review.get({ plain: true }));
             console.log(reviews);
             //renders my account page
-            res.render('myaccount', { reviews, loggedIn: true, title: 'dashboard', layout: 'my-account' });
+            res.render('myaccount', { reviews, loggedIn: true});
         })
         .catch(err => {
             console.log(err);
