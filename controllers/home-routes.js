@@ -18,9 +18,8 @@ router.get('/', (req, res) => {
     }]
   }).then(dbUserData => {
     const user = dbUserData;
-    const userImage = dbUserData.dataValues.user_image
-    console.log(userImage)
-    res.render('homepage', {
+    console.log(user)
+    res.render('landing', {
       user,
       loggedIn: req.session.loggedIn
     });
@@ -81,8 +80,20 @@ router.get('/signup', (req,res) => {
   res.render('signup')
 })
 
+router.get('/myaccount', (req,res) => {
+  // if (req.session.user_id) {
+    // res.redirect('/myaccount');
+  //   return;
+  // }
+  res.render('myaccount')
+})
+
 router.get('/landing', (req,res) => {
   res.render('landing')
+})
+
+router.get('/homepage', (req,res) => {
+  res.render('homepage')
 })
 
 module.exports = router;

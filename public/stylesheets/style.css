@@ -25,6 +25,10 @@
   background: #fff;
 }
 
+.recipePgTitle {
+    background: #FFF24B;
+    /* border-bottom: 3px 3px #000; */
+}
 
 
 .bannerText {
@@ -473,6 +477,41 @@ text-decoration: none;
 .recipeList {
   margin-top: 50px
 }
+
+.recipebutton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .recipebutton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  /* .recipebutton {
+    text-shadow: 2px 2px  #000000;
+    } */
+
+  
+  .submiReview {
+      margin: 50px 0;
+  }
+
+  .recipebutton:hover span {
+    padding-right: 25px;
+  }
+  
+  .recipebutton:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
 
 
 /* SHOPPING LIST */

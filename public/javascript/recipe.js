@@ -69,10 +69,10 @@ function displaySingleRecipe(recipe) {
   console.log(recipe.ingredients);
 
     let recipeContainer = $("<div>").appendTo(recipeEl);
-    let recipeName = $('<h2>').text(recipe.name).appendTo(recipeContainer);
-    let recipeImg = $("<img>").attr("src", recipe.image).appendTo(recipeContainer);
+    let recipeName = $('<h2>').text(recipe.name).appendTo(singleRecipeTitle);
+    let recipeImg = $("<img>").attr("src", recipe.image).appendTo(singleRecipeImage);
     let recipeBodyContainer = $('<div>').appendTo(recipeContainer);
-    let ingredientsContainer = $('<div>').addClass('ingredients-container row').appendTo(recipeBodyContainer)
+    let ingredientsContainer = $('<div>').addClass('ingredients-container row').appendTo(singleRecipeTitle)
     let measurements = $('<div>').addClass('col-1').appendTo(ingredientsContainer)
     // let space = $('<div>').addClass('col-1').appendTo(ingredientsContainer)
     let ingredientsEl = $('<div>').addClass('col-2').appendTo(ingredientsContainer).attr('id', 'ingredientsList')

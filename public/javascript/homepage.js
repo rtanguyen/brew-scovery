@@ -61,7 +61,7 @@ function displayRecipe(response) {
       <img class="card-img-top recipeImg img-fluid" src="https://spoonacular.com/recipeImages/${id}-556x370.jpg" alt="recipeImage" >
       <div class="card-body text-center">
         <p class="recipe-title card-text fs-3" id="${id}" href="#">${response[i].title}</p>
-        <button class="btn seeRecipe text-uppercase" id="${id}" href="#" type="button" onclick="fetchSingleRecipe(${id})">View recipe</button>
+        <button class="btn seeRecipe text-uppercase recipebutton" id="${id}" href="#" type="button" onclick="fetchSingleRecipe(${id})"><span>View recipe</span></button>
       </div>
     </div>
     `).appendTo(recipeCardsEl);
