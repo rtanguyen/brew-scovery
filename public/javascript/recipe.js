@@ -18,7 +18,7 @@ const getRecipe = (recipeId) => {
     {
       method: "GET",
       headers: {
-        "x-rapidapi-key": "30f04bca87mshb6f84916c7e0709p18c5ebjsne207a2d1ce23",
+        "x-rapidapi-key": "34dff35736msh55aa38c64ff1987p1a7defjsn975b941ff55a",
         "x-rapidapi-host":
           "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
       },
@@ -173,4 +173,4 @@ async function shoppingListHandler(event) {
           alert(response.statusText);
       }
 }
-document.querySelector('#add-list-btn').addEventListener('click', shoppingListHandler);
+// document.querySelector('#add-list-btn').addEventListener('click', shoppingListHandler);
