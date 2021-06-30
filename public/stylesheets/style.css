@@ -25,6 +25,10 @@
   background: #fff;
 }
 
+.recipePgTitle {
+    background: #FFF24B;
+    /* border-bottom: 3px 3px #000; */
+}
 
 
 .bannerText {
@@ -489,6 +493,11 @@ text-decoration: none;
     right: -20px;
     transition: 0.5s;
   }
+
+  /* .recipebutton {
+    text-shadow: 2px 2px  #000000;
+    } */
+
   
   .submiReview {
       margin: 50px 0;
