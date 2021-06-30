@@ -20,9 +20,19 @@
     <div class="card">
       <img src="https://via.placeholder.com/300.png/" alt="Placeholder" style="width:100%">
       <div class="container">
-        <h2>My Reviews</h2>
-        <!-- insert reviews -->
-        {{> reviews}}
+        {{#if reviews.length}}
+<section>
+  <h2>My reviews</h2>
+  <ol>
+    {{#each reviews as |review|}}
+    <li>
+      {{review.review_text}}</li>
+      <p><a href="/dashboard/edit/{{review.id}}" class="edit-link">Edit Review</a>
+    </p>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
       </div>
     </div>
   </div>
