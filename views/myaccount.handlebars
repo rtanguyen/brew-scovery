@@ -1,20 +1,29 @@
-
 <div class="about-section">
   <h1>My Account</h1>
   <p><p>
 </div>
 
 <h2 style="text-align:center">About Me</h2>
-<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat possimus at dolor 
-    voluptatibus reprehenderit sapiente quia facere. Quam, voluptate. Doloribus 
-    optio hic esse eos, magni doloremque veniam quod tempore. Aliquam?</span>
+
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link active" href="/views/myaccount.handlebars">My Account</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/views/homepage.handlebars">Home</a>
+  </li>
+</ul>
+
+
 <div class="row">
   <div class="column">
     <div class="card">
       <img src="https://via.placeholder.com/300.png/" alt="Placeholder" style="width:100%">
       <div class="container">
-        <h2>Jane Doe's Reviews</h2>
+        <h2>My Reviews</h2>
         <!-- insert reviews -->
+        {{> reviews}}
       </div>
     </div>
   </div>
+</div>
