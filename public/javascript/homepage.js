@@ -76,11 +76,24 @@ function displayRecipe(response) {
 const fetchSingleRecipe = id => {
   console.log(id);
 
-  fetch('/recipe/' + id)
-    .then((function(response) {
-      console.log(response);
-    }))
-  }
+  fetch("/recipe/" + id, {
+    headers : { 
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+     }
+  })
+  .then((response) => response.json())
+  .then((messages) => {console.log("messages");});
+}
+    // .then((function(response) {
+    //   console.log(response);
+    // })
+//     .then(response => response.json())
+// .then((body) => {
+//         console.log(body);
+// })}
+
+
 // method: 'GET',
 // body: JSON.stringify({
 //   recipeId

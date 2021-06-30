@@ -24,16 +24,16 @@ router.get('/', (req, res) => {
 
 //get for single recipe/:api id
 router.get('/recipe/:id' , (req, res) => {
-  // Reviews.findAll({
-  //   where: { id: req.body.api_id
-  //   },
-  //   attributes: ['id', 'review_text', 'api_id', 'user_id', 'created_at'],
-  //   include: { 
-  //       model: User,
-  //       attributes: ['id', 'username', 'user_image']
-  //   }
-  // }).then(dbReviewData => {
-  //   const reviews = dbReviewData.map(review => review.get({ plain: true }))
+  Reviews.findAll({
+    where: { id: req.params.id
+    },
+    attributes: ['id', 'review_text', 'api_id', 'user_id', 'created_at'],
+    include: { 
+        model: User,
+        attributes: ['id', 'username', 'user_image']
+    }
+  }).then(dbReviewData => {
+    const reviews = dbReviewData.map(review => review.get({ plain: true }))
     res.render('recipe', {
       loggedIn: true,
       id: req.params.id,
@@ -41,6 +41,9 @@ router.get('/recipe/:id' , (req, res) => {
       // list_id: req.sessions.user_id
     })
   })
+});
+
+
   // .catch(err => {
   //   console.log(err);
 //   //   res.status(500).json(err);

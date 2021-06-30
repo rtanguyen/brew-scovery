@@ -41,7 +41,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         if (dbReviewsData) {
           const review = dbReviewsData.get({ plain: true });
           //include a view that renders an edit
-          res.render('dashboard', {
+          res.render('single-review', {
             review,
             loggedIn: true
           });
