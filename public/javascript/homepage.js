@@ -73,82 +73,41 @@ function displayRecipe(response) {
 // displayRecipe(dataSample)
 
 //==================== single recipe ====================//
-//TODO: double check href route
-$(document).ready(function () {
-  $('button[name="recipe-title"]').click(function () {
-    let recipeId = this.value;
-    location.href = './recipes'
-    fetchRecipeDetails(recipeId);
-  });
-});
-
-const fetchRecipeDetails = (id) => {
+const fetchSingleRecipe = id => {
   console.log(id);
-  console.log('hi');
-  fetch(
-    "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" +
-      id +
-      "/information",
-    {
-      method: "GET",
-      headers: {
-        "x-rapidapi-key": "d020ffed6amsh9102480cca766bbp115709jsn6f2ff5ea985b",
-        "x-rapidapi-host":
-          "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-      },
-    }
-  ).then(function (response) {
-    response.json().then(function (response) {
-      let recipe = {};
-      recipe.name = response.title;
-      recipe.ingredients = [];
-      recipe.image = response.image;
-      recipe.instructions = response.instructions
-    
-      let ingredientsArr = response.extendedIngredients;
-      for (let i = 0; i < ingredientsArr.length; i++) {
-        var ingredient = response.extendedIngredients[i].originalString;
-    
-        recipe.ingredients.push(ingredient);
-      }
-      console.log(recipe);
-      return recipe;
-      }).then(recipe => displaySingleRecipe(recipe))
-      .catch((err) => {
-        console.error(err);
-      });
-  });
-};
 
-// function parseRecipeRes(response) {
-//   let recipe = {};
-//   recipe.name = response.title;
-//   recipe.ingredients = [];
-//   recipe.image = response.image;
-//   recipe.instructions = response.instructions
+  fetch("/recipe/" + id, {
+    headers : { 
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+     }
+  })
+  .then((response) => response.json())
+  .then((messages) => {console.log("messages");});
+}
+    // .then((function(response) {
+    //   console.log(response);
+    // })
+//     .then(response => response.json())
+// .then((body) => {
+//         console.log(body);
+// })}
 
-//   let ingredientsArr = response.extendedIngredients;
-//   for (let i = 0; i < ingredientsArr.length; i++) {
-//     var ingredient = response.extendedIngredients[i].originalString;
 
-//     recipe.ingredients.push(ingredient);
-//   }
-//   // console.log(recipe);
-//   return recipe;
+// method: 'GET',
+// body: JSON.stringify({
+//   recipeId
+// }),
+// headers: {
+//     'Content-Type': 'application/json'
 // }
-
-function displaySingleRecipe(recipe) {
-    let recipeContainer = $("<div>").appendTo(recipeDetailsEl);
-    let recipeName = $('<h2>').text(recipe.name).appendTo(recipeContainer);
-    let recipeImg = $("<img>").attr("src", recipe.image).appendTo(recipeContainer);
-    let recipeBodyContainer = $('<div>').appendTo(recipeContainer);
-    let ingredientsContainer = $('<div>').appendTo(recipeBodyContainer)
-    let instructions = $('<div>').text(recipe.instructions).appendTo(recipeBodyContainer)
-
-    for (var i = 0; i < recipe.ingredients.length; i++) {
-      let ingredients = $("<p>").text(recipe.ingredients[i]).appendTo(ingredientsContainer)
-    }
-  }
+// })
+// .then(response => { console.log(response)
+// })
+// .then(res => {
+// return res.json()
+// })
+// };
 
 
   const fetchSingleRecipe = id => {
