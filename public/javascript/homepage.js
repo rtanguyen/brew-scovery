@@ -1,4 +1,3 @@
-
 let recipeCardsEl = document.querySelector('#recipeContainer');
 const categories = document.querySelectorAll(".btn-group > button.btn");
 let recipeId;
@@ -73,18 +72,28 @@ function displayRecipe(response) {
 // displayRecipe(dataSample)
 
 //==================== single recipe ====================//
-const fetchSingleRecipe = id => {
-  console.log(id);
+// const fetchSingleRecipe = id => {
+//   console.log(id);
 
-  fetch("/recipe/" + id, {
-    headers : { 
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-     }
-  })
-  .then((response) => {response.json()})
-  .then((messages) => {console.log("messages");});
-}
+//   fetch("/recipe/" + id, {
+//     headers : { 
+//       'Content-Type': 'application/json',
+//       'Accept': 'application/json'
+//      }
+//   })
+//   .then((response) => {response.json()})
+//   .then((messages) => {console.log("messages");});
+// }
+
+function fetchSingleRecipe(id_) {
+      console.log(id_);
+      fetch('/recipe/' + id_)
+        .then(function(response) {
+          console.log(response);
+          location.assign(response.url)
+        }) 
+    }
+
 
     // .then((function(response) {
     //   console.log(response);
