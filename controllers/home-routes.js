@@ -67,6 +67,14 @@ router.get('/signup', (req,res) => {
   res.render('signup')
 })
 
+router.get('/myaccount', (req,res) => {
+  // if (req.session.user_id) {
+    // res.redirect('/myaccount');
+  //   return;
+  // }
+  res.render('myaccount')
+})
+
 router.get('/landing', (req,res) => {
   res.render('landing')
 })
