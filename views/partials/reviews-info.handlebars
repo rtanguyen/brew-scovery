@@ -1,18 +1,24 @@
-<div class="reviews" id="{{id}}">
-    <section class="review">
-      <div>
-        <img src="{{user.user_image}}" />
+{{!-- <div class="container">
+  <h3 class="reviewRecipeTitle">Reviews</h4>
+</div> --}}
+<div class="reviews container my-4" id="{{id}}">
+    <div class="review row">
+      <div class="col-2">
+          <div>
+        <img class="reviewImage rounded-circle" width="40" height="40" src="{{user.user_image}}" />
       </div>
-      <div>
+      <div class="reviewUserName">
         {{user.username}}
         on
         {{format_date user.createdAt}}
       </div>
-      <div class="text">
+      </div>
+      <div class="text reviewComment col-6">
         {{review_text}}
       </div>
 
         {{!-- <button type="button" class="delete-review-btn" id="user-{{user.id}} delete-{{id}}">delete</button> --}}
-    </section>
+    </div>
 
 </div>
+
