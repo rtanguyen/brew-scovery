@@ -21,6 +21,12 @@
     border-bottom: 4px solid #E49600;
 }
 
+.deleteBtn {
+    width: 50%;
+    font-size: 12px;
+  }
+
+  
 .categoryOptions {
   background: #fff;
 }
