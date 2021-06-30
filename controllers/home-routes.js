@@ -11,7 +11,11 @@ router.get('/', (req, res) => {
     attributes: [
       'username',
       'user_image'
-    ]
+    ],
+    include: [{
+      model: Reviews,
+      attributes: ['id', 'review_text', 'user_id']
+    }]
   }).then(dbUserData => {
     const user = dbUserData;
     console.log(user)
@@ -25,24 +29,33 @@ router.get('/', (req, res) => {
 //get for single recipe/:api id
 router.get('/recipe/:id' , (req, res) => {
   Reviews.findAll({
-    where: { id: req.params.id
-    },
-    attributes: ['id', 'review_text', 'api_id', 'user_id', 'created_at'],
-    include: { 
-        model: User,
-        attributes: ['id', 'username', 'user_image']
-    }
-  }).then(dbReviewData => {
+    where: {
+      api_id: req.params.id
+  },
+  attributes: ['id', 'review_text', 'user_id'],
+  include: [{model: User,
+      atrributes: ['username', 'user_image']},
+  ]},
+  {include: { model: List,
+      atrributes: ['list_name', 'ingredients_name']}
+  })
+    // include: { 
+    //     model: User,
+    //     attributes: ['id', 'username', 'user_image']
+    // }
+  .then(dbReviewData => {
+    
     const reviews = dbReviewData.map(review => review.get({ plain: true }))
+    // console.log(reviews);
     res.render('recipe', {
       loggedIn: true,
       id: req.params.id,
+      reviews
       //save user id to save new shopping list from recipe page
       // list_id: req.sessions.user_id
     })
-  })
-});
-
+  });
+})
 
   // .catch(err => {
   //   console.log(err);

@@ -27,14 +27,14 @@
   </form>
 </div>
  {{!-- {{> reviews review}} --}}
+{{#each reviews as |review|}}
+  {{!-- {{review.review_text}} --}}
+  {{>reviews-info review}}
+{{/each}}
 
 <script>
   const recipeId = {{id}}
 </script>
-</div>
-{{!-- <script>
-  const listId = {{list_id}}
-</script> --}}
   <script src="/javascript/homepage.js"></script>
   <script src="/javascript/recipe.js"></script>
-  <script src="/javascript/add-review.js"></script>
+  {{!-- <script src="/javascript/add-review.js"></script> --}}

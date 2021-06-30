@@ -11,15 +11,16 @@ router.get('/',withAuth, (req, res) => {
         },
         attributes: ['id', 'review_text', 'user_id'],
         include: [{model: User,
-            atrributes: ['username']},
+            atrributes: ['username', 'user_image']},
         ]},
         {include: { model: List,
-            atrributes: ['list_name', 'ingredients_name']}
+            atrributes: ['ingredients_name']}
         })
         .then(dbReviewsData => {
             const reviews = dbReviewsData.map(review => review.get({ plain: true }));
+            console.log(reviews);
             //renders my account page
-            res.render('myaccount', { reviews, loggedIn: true });
+            res.render('myaccount', { reviews, loggedIn: true, title: 'dashboard', layout: 'my-account' });
         })
         .catch(err => {
             console.log(err);
@@ -54,4 +55,30 @@ router.get('/edit/:id', withAuth, (req, res) => {
       });
 })
 //delete reviews
+
+
+
+router.get('/list/:id', withAuth, (req, res) => {
+  List.findOne({
+      where: {id: req.session.user_id },
+      attributes:  ['ingredients_name'],
+      // include: [
+      //     {
+      //         model: List,
+      //         attributes: ['list_name', 'ingredients_name']
+      //     }
+      // ]
+  })
+  .then(dbListData => {
+    const ingredientsList = dbListData
+    // .map(ingredient => ingredient.get({ plain: true }));
+    ;
+    console.log(ingredientsList)
+      res.render('shopping-list', {
+          list,
+          loggedIn: true
+        });
+      });
+    });
+  
 module.exports = router;
