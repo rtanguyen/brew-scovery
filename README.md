@@ -55,10 +55,10 @@
   WHEN I click on My Account   
   THEN I am presented with fields showing my username/email, masked password, and my reviews    
 
-  WHEN I click on the review in my account 
+  WHEN I click on the review in my account   
   THEN I am presented with the option to edit or delete 
 
-  WHEN I click logout
+  WHEN I click logout   
   THEN I am redirected back to the login page  
 
   ## Technology
