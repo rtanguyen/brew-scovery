@@ -296,9 +296,12 @@ hr {
 
 
 .prefooter {
-
     background: #1e211f;
     /* border-top: 4px solid #E49600; */
+}
+
+.footHeaders{
+    color: #fff;
 }
 
 a {
