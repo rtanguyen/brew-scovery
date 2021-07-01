@@ -1,21 +1,29 @@
-# Placeholder for project title 
+# Miso Hungry
+
+   
   ## Description
+  A food application that renders creative, sustainable, and affordable meals to all levels of cooks around the globe. The user friendly app allows the user to create an account to leave reviews for recipes as well as seed the ingredients to a grocery shopping list for a seamless meal prep experience.   
+
+![Landing](https://user-images.githubusercontent.com/79684575/124193256-1e168100-da8c-11eb-8e1c-ad29eff0b56e.png)
   
+   
+![homepage](https://user-images.githubusercontent.com/79684575/124193220-13f48280-da8c-11eb-8591-abd6a3ef935b.png)
 
-
+  
   ## Table of Contents
 
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [User Story](#userstory)
-  * [License](#license)
-  * [Questions](#questions)
+  [Installation](#installation)   
+  [Usage](#usage)   
+  [User Story](#userstory)   
+  [Technology](technnology)   
+  [License](#license)   
+  [Questions](#questions)   
   
   ## Installation   
-  No installation required. Access the application via our Heroku URL here: [Heroku]()
+  No installation required. Access the application via our Heroku URL here: [Heroku](https://intense-temple-14332.herokuapp.com/)
 
   ## Usage 
-  Navigate to application landing page and create a login once you select the sign up button. Once have completed the sign up process, you will land on your dashboard where you can explore a number of different recipes. 
+  Navigate to application landing page and create a login once you select the sign up button. Once have completed the sign up process, you will land on your homepage where you can explore a number of different recipes. Select one to view and leave reviews/feedback.  
 
 
   ## User Story
@@ -32,24 +40,34 @@
   THEN I am presented with a recipe   
      
   WHEN I select sign up   
-  THEN I am taken to a sign up page with username/email, password, first name, last name fields   
+  THEN I am taken to a sign up page with username/email, password fields  
      
   WHEN  I click the submit CTA button   
-  THEN I am taken to the dashboard   
+  THEN I am taken to the homepage   
 
   WHEN I select a recipe   
-  THEN I am presented with the recipe details and a review CTA button   
+  THEN I am presented with the recipe details and a review section   
      
-  WHEN I click the review CTA   
-  THEN  I am presented with fields to enter my first name, last initial, a review and a thumb up/down   icons and a save CTA button   
+  WHEN I enter a review   
+  THEN  I am able to submit the review with the submit CTA 
      
   WHEN I click on My Account   
-  THEN I am presented with fields showing my username/email, masked password, and my reviews of recipes   
+  THEN I am presented with fields showing my username/email, masked password, and my reviews    
 
-  WHEN I click on the edit icon on the review   
-  THEN I am presented with the option to edit or delete   
+  WHEN I click on the review in my account 
+  THEN I am presented with the option to edit or delete 
 
-  
+  WHEN I click logout
+  THEN I am redirected back to the login page  
+
+  ## Technology
+  Bootstrap  
+  Node.js      
+  MySql   
+  Express.js   
+  Cloudinary  
+  Handlebars.js  
+
   ## License  
 
   This repo is licensed under the MIT License. (https://opensource.org/licenses/MIT) 
@@ -58,8 +76,8 @@
   For any questions, connect with us at    
   [bryant.uwagbale@gmail.com](mailto:bryant.uwagbale@gmail.com)  
   [ronniesmail14@gmail.com](mailto:ronniesmail14@gmail.com)  
-  [Rtanguyen@gmail.com](mailto:Rtanguyen@gmail.com) 
+  [Rtanguyen@gmail.com](mailto:Rtanguyen@gmail.com)   
   [mimzy414@gmail.com](mailto:mimzy414@gmail.com) 
   
-  GitHub: 
+  GitHub: [miso-hungry](https://github.com/rtanguyen/miso-hungry)
 
