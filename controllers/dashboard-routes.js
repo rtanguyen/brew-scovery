@@ -58,27 +58,27 @@ router.get('/edit/:id', withAuth, (req, res) => {
 
 
 
-// router.get('/list/:id', withAuth, (req, res) => {
-//   List.findOne({
-//       where: {id: req.session.user_id },
-//       attributes:  ['ingredients_name'],
-//       // include: [
-//       //     {
-//       //         model: List,
-//       //         attributes: ['list_name', 'ingredients_name']
-//       //     }
-//       // ]
-//   })
-//   .then(dbListData => {
-//     const ingredientsList = dbListData
-//     // .map(ingredient => ingredient.get({ plain: true }));
-//     ;
-//     console.log(ingredientsList)
-//       res.render('shopping-list', {
-//           list,
-//           loggedIn: true
-//         });
-//       });
-//     });
+router.get('/list/:id', withAuth, (req, res) => {
+  List.findOne({
+      where: {id: req.session.user_id },
+      attributes:  ['ingredients_name'],
+      // include: [
+      //     {
+      //         model: List,
+      //         attributes: ['list_name', 'ingredients_name']
+      //     }
+      // ]
+  })
+  .then(dbListData => {
+    const ingredientsList = dbListData
+    // .map(ingredient => ingredient.get({ plain: true }));
+    ;
+    console.log(ingredientsList)
+      res.render('shopping-list', {
+          list,
+          loggedIn: true
+        });
+      });
+    });
   
 module.exports = router;

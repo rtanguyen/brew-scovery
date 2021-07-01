@@ -24,7 +24,10 @@ router.get('/', (req, res) => {
       user,
       loggedIn: req.session.loggedIn
     });
-  })
+  }) .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 //get for single recipe/:api id
@@ -55,8 +58,11 @@ router.get('/recipe/:id' , (req, res) => {
       //save user id to save new shopping list from recipe page
       // list_id: req.sessions.user_id
     })
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   });
-})
+});
 
   // .catch(err => {
   //   console.log(err);
