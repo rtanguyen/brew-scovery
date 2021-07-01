@@ -4,9 +4,10 @@
   ## Description
   A food application that renders creative, sustainable, and affordable meals to all levels of cooks around the globe. The user friendly app allows the user to create an account to leave reviews for recipes as well as seed the ingredients to a grocery shopping list for a seamless meal prep experience.   
 
-![Landing Page](https://user-images.githubusercontent.com/79684575/124056885-28813e00-d9ec-11eb-9071-c69e3d38851b.png)   
+![Landing](https://user-images.githubusercontent.com/79684575/124193256-1e168100-da8c-11eb-8e1c-ad29eff0b56e.png)
+  
    
-![Home Page](https://user-images.githubusercontent.com/79684575/124057028-5e262700-d9ec-11eb-8db3-8b096a958778.png)
+![homepage](https://user-images.githubusercontent.com/79684575/124193220-13f48280-da8c-11eb-8591-abd6a3ef935b.png)
 
   
   ## Table of Contents
