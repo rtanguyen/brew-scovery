@@ -7,7 +7,8 @@
 ![Landing](https://user-images.githubusercontent.com/79684575/124193256-1e168100-da8c-11eb-8e1c-ad29eff0b56e.png)
   
    
-![homepage](https://user-images.githubusercontent.com/79684575/124193220-13f48280-da8c-11eb-8591-abd6a3ef935b.png)
+![homepage](https://user-images.githubusercontent.com/79684575/124193491-85cccc00-da8c-11eb-8490-5bcefb872559.png)
+
 
   
   ## Table of Contents
