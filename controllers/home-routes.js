@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Reviews, List } = require('../models')
 
 
-router.get('/', (req, res) => {
+router.get('/homepage', (req, res) => {
   console.log("SESSION", req.session)
   User.findOne({
     where: {
@@ -24,7 +24,10 @@ router.get('/', (req, res) => {
       user,
       loggedIn: req.session.loggedIn
     });
-  })
+  }) .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 //get for single recipe/:api id
@@ -55,8 +58,11 @@ router.get('/recipe/:id' , (req, res) => {
       //save user id to save new shopping list from recipe page
       // list_id: req.sessions.user_id
     })
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   });
-})
+});
 
   // .catch(err => {
   //   console.log(err);
@@ -66,7 +72,7 @@ router.get('/recipe/:id' , (req, res) => {
 //login
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/');
+      res.redirect('/dashboard');
       return;
     }
   
@@ -89,12 +95,12 @@ router.get('/signup', (req,res) => {
 //   res.render('myaccount')
 // })
 
-router.get('/landing', (req,res) => {
+router.get('/', (req,res) => {
   res.render('landing')
 })
 
-router.get('/homepage', (req,res) => {
-  res.render('homepage')
-})
+// router.get('/homepage', (req,res) => {
+//   res.render('homepage')
+// })
 
 module.exports = router;
