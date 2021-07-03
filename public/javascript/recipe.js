@@ -69,13 +69,13 @@ function displaySingleRecipe(recipe) {
   console.log(recipe.ingredients);
 
   let singleRecipeDetails = $(`
-      <h2 class="mb-3 text-start my-4 mx-4">${recipe.name}</h2>
+      <h2 class="mb-3 text-start my-4 mx-4 px-4">${recipe.name}</h2>
       <div class="row mb-5 pt-3 pt-lg-4 pt-xl-5">
       <div class="row justify-content-center"
         <div class="col-12 col-md-6 col-xl-8 justify-content-center">
           <img class="mb-3 text-center justify-content-center" src="${recipe.image}" style="width: 700px; height: 400px"=>
         </div>
-        <div class="col-6 justify-content-center py-4 px-4">
+        <div class="col-4 justify-content-center py-4 px-4">
           <div class="ingTitle fw-bold my-2 justify-content-center text-center fs-4">
             Ingredients
           </div>
@@ -86,8 +86,8 @@ function displaySingleRecipe(recipe) {
           </div>
         </div>
         </div>
-        <div class="col-6 justify-content-center py-4 px-4">
-          <div class="directionTitle fw-bold my-2 text-center fs-4">
+        <div class="col-8 justify-content-center py-4 px-4">
+          <div class="directionTitle fw-bold my-2 text-start fs-4">
             Directions
           </div>
           <div class="py-4 px-4">

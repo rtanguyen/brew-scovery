@@ -99,6 +99,10 @@ router.get('/', (req,res) => {
   res.render('landing')
 })
 
+router.get('/uhoh', (req,res) => {
+  res.render('uhoh')
+})
+
 // router.get('/homepage', (req,res) => {
 //   res.render('homepage')
 // })
