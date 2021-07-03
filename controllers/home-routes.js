@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Reviews, List } = require('../models')
 
 
-router.get('/', (req, res) => {
+router.get('/homepage', (req, res) => {
   console.log("SESSION", req.session)
   User.findOne({
     where: {
@@ -72,7 +72,7 @@ router.get('/recipe/:id' , (req, res) => {
 //login
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/');
+      res.redirect('/dashboard');
       return;
     }
   
@@ -95,12 +95,12 @@ router.get('/signup', (req,res) => {
 //   res.render('myaccount')
 // })
 
-router.get('/landing', (req,res) => {
+router.get('/', (req,res) => {
   res.render('landing')
 })
 
-router.get('/homepage', (req,res) => {
-  res.render('homepage')
-})
+// router.get('/homepage', (req,res) => {
+//   res.render('homepage')
+// })
 
 module.exports = router;

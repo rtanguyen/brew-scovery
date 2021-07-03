@@ -4,28 +4,49 @@ const withAuth = require('../utils/auth');
 
 //on dashboard renders the user account with all reviews and their list
 //my account page
-router.get('/',withAuth, (req, res) => {
-    Reviews.findAll({
-        where: {
-            user_id: req.session.user_id
-        },
-        attributes: ['id', 'review_text', 'user_id'],
-        include: [{model: User,
-            atrributes: ['username', 'user_image']},
-        ]},
-        {include: { model: List,
-            atrributes: ['ingredients_name']}
-        })
-        .then(dbReviewsData => {
-            const reviews = dbReviewsData.map(review => review.get({ plain: true }));
-            console.log(reviews);
-            //renders my account page
-            res.render('myaccount', { reviews, loggedIn: true});
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+// router.get('/',withAuth, (req, res) => {
+//     Reviews.findAll({
+//         where: {
+//             user_id: req.session.user_id
+//         },
+//         attributes: ['id', 'review_text', 'user_id'],
+//         include: [{model: User,
+//             atrributes: ['username', 'user_image'],
+        
+//       include: { model: List,
+//             atrributes: ['ingredients_name']}}
+//         ]})
+//         .then(dbReviewsData => {
+//             const reviews = dbReviewsData.map(review => review.get({ plain: true }));
+//             console.log(reviews);
+//             //renders my account page
+//             res.render('myaccount', { reviews, loggedIn: true});
+//         })
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// });
+router.get('/', withAuth, (req, res)=>{
+  Reviews.findAll({
+    where: {
+      user_id: req.session.user_id
+    },
+      attributes: ['id', 'review_text', 'user_id'],
+      include: [{ 
+        model: User,
+        attributes: ['username', 'user_image'],
+      }],  
+  }).then(dbReviewsData => {
+        const reviews = dbReviewsData.map(review => review.get({ plain: true }));
+        console.log(reviews);
+        //renders my account page
+        res.render('myaccount', { reviews, loggedIn: true});
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 //edit reviews
 router.get('/edit/:id', withAuth, (req, res) => {
