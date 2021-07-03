@@ -35,6 +35,14 @@
   background: #fff;
 }
 
+.uhohIcon {
+  color: #E49600;
+}
+
+.uhoh{
+  margin: 280px 0;
+}
+
 .recipePgTitle {
     background: #FFF24B;
     /* border-bottom: 3px 3px #000; */
