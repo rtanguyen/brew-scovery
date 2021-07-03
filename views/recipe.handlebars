@@ -2,9 +2,9 @@
     <h1>Whoa! That looks delish!</h1>
   </div>
 
-  <div class="container singleRecipeData mx-4 my-4" >
+  {{!-- <div class="container singleRecipeData mx-4 my-4" >
     <div class="row">
-      <div class="col-sm-6 text-center" id="singleRecipeTitle">
+      <div class="col-sm-6 text-center" id="singleRecipeTitle"> --}}
           {{!-- <div class="container align-middle text-center" id="ingredientsItemsList">
             <div class="row align-middle text-center">
               <div class="col amountList align-middle text-center">
@@ -19,25 +19,28 @@
               </div>
             </div>
           </div> --}}
-      </div>
+      {{!-- </div>
 
       <div class="col-sm-6" id="singleRecipeImage">
       </div>
-        </div>
+        </div> --}}
   <!-- recipes -->
   {{!-- <button type="button" id="add-list-btn">+ shopping</button> --}}
   <div id="recipeDetailsContainer">
     
   </div>
-</div>
+{{!-- </div> --}}
   <!-- submit a review -->
   <div class="container mx-4 my-4">
-  <form class="review-form">
+  <form class="review-form ">
+    <p>Share your thoughts! Would you recommend this?</p>
   <div>
       <textarea class="form-control" name="review-body" rows="3"></textarea>
   </div>
-  
-  <button type="submit" class="btn btn-lg btn-primary submiReview btn-block text-uppercase signUpBtn mx-1 signup-form" id="submit-review-btn">Submit a Review!</button>
+  <div class="d-flex justify-content-end">
+    <button type="submit" class="btn btn-lg btn-primary submiReview btn-block text-uppercase signUpBtn mx-1 signup-form" id="submit-review-btn">Submit a Review!</button>
+  </div>
+  {{!-- <button type="submit" class="btn btn-lg btn-primary submiReview btn-block text-uppercase signUpBtn mx-1 signup-form" id="submit-review-btn d-flex justify-content-end">Submit a Review!</button> --}}
   </form>
 </div>
 

@@ -91,6 +91,18 @@ hr {
   font-size: 12px;
 }
 
+.editReviewBtn {
+    background: #FFF24B;
+    width: 20%;
+    font-size: 12px;
+  }
+
+
+.deleteReviewBtn {
+    width: 20%;
+    font-size: 12px;
+  }
+
 .categoryTag {
   font-size: 8px;
 }

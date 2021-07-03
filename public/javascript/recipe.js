@@ -69,21 +69,30 @@ function displaySingleRecipe(recipe) {
   console.log(recipe.ingredients);
 
   let singleRecipeDetails = $(`
+      <h2 class="mb-3 text-start my-4 mx-4">${recipe.name}</h2>
       <div class="row mb-5 ">
-      <h2 class="mb-3 text-start">${recipe.name}</h2>
-      <img class="mb-3 text-center" src="${recipe.image}" style="width: 800px">
-      <div>
-      <div><p>${recipe.instructions}</p></div>
+        <div class="col-6 d-flex justify-content-center my-4">
+          <img class="mb-3 text-center" src="${recipe.image}" style="width: 700px; height: 400px"=>
+        </div>
+        <div class="col-6 justify-content-center">
+          <div class="ingTitle fw-bold my-2">
+            Ingredients
+          </div>
+          <div class="container text-left align-content-left mb-5 my-4" >
+          <div class="ingredients-container row " id="ingredients-container">
+            <div class="col-2" id="ingredients-measurement"></div>
+            <div class="col-4" id="ingredientsList"></div>
+          </div>
+        </div>
+          <div class="directionTitle fw-bold my-2">
+            Directions
+          </div>
+          <div>
+              <p>${recipe.instructions}</p>
+          </div>
       </div>
-    </div>
-    <div class="container text-center align-content-center mb-5" >
-      <div class="ingredients-container row justify-content-center" id="ingredients-container">
-      <div class="col-2" id="ingredients-measurement"></div>
-      <div class="col-4" id="ingredientsList"></div>
 
-      </div>
-      </div>
-      </div>
+
 
       `).appendTo(recipeEl)
 
