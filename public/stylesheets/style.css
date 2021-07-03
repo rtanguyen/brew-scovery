@@ -26,6 +26,10 @@
     font-size: 12px;
   }
 
+.login {
+  margin-top: 100px;
+  margin-bottom: 250px;
+}
 
 .categoryOptions {
   background: #fff;
@@ -36,7 +40,11 @@
     /* border-bottom: 3px 3px #000; */
 }
 
+.loginBox {
+  margin-top: 80px;
+  margin-bottom: 140px;
 
+}
 .bannerText {
     display: block;
     /* justify-content: center; */
