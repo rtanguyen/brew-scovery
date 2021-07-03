@@ -70,25 +70,29 @@ function displaySingleRecipe(recipe) {
 
   let singleRecipeDetails = $(`
       <h2 class="mb-3 text-start my-4 mx-4">${recipe.name}</h2>
-      <div class="row mb-5 ">
-        <div class="col-6 d-flex justify-content-center my-4">
-          <img class="mb-3 text-center" src="${recipe.image}" style="width: 700px; height: 400px"=>
+      <div class="row mb-5 pt-3 pt-lg-4 pt-xl-5">
+      <div class="row justify-content-center"
+        <div class="col-12 col-md-6 col-xl-8 justify-content-center">
+          <img class="mb-3 text-center justify-content-center" src="${recipe.image}" style="width: 700px; height: 400px"=>
         </div>
-        <div class="col-6 justify-content-center">
-          <div class="ingTitle fw-bold my-2">
+        <div class="col-6 justify-content-center py-4 px-4">
+          <div class="ingTitle fw-bold my-2 justify-content-center text-center fs-4">
             Ingredients
           </div>
-          <div class="container text-left align-content-left mb-5 my-4" >
+          <div class="container text-left align-content-left py-4 px-4" >
           <div class="ingredients-container row " id="ingredients-container">
-            <div class="col-2" id="ingredients-measurement"></div>
-            <div class="col-4" id="ingredientsList"></div>
+            <div class="col-6 text-end" id="ingredients-measurement"></div>
+            <div class="col-6 text-start" id="ingredientsList"></div>
           </div>
         </div>
-          <div class="directionTitle fw-bold my-2">
+        </div>
+        <div class="col-6 justify-content-center py-4 px-4">
+          <div class="directionTitle fw-bold my-2 text-center fs-4">
             Directions
           </div>
-          <div>
+          <div class="py-4 px-4">
               <p>${recipe.instructions}</p>
+          </div>
           </div>
       </div>
 
