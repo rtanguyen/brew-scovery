@@ -45,7 +45,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item myAccountNav" href="/myaccount">My account</a></li>
-              <li><a class="dropdown-item logOutNav" href="/landing">Log out</a></li>
+              <li><a class="dropdown-item logOutNav" href="/login">Log out</a></li>
             </ul>
           </li>
         </ul>
@@ -127,7 +127,10 @@
 <!-- {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{!-- <script>Handlebars.compile($('#t').html())</script> --}}
-  {{/if}}
+  {{/if}}-->
+  {{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
 
 </body>
 </html>

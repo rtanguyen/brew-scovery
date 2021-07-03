@@ -10,11 +10,7 @@
     
     <!-- FONT AWESOME IMPORT  --> 
     <link rel="stylesheet" href="/stylesheets/style.css"/>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script
-			src="https://kit.fontawesome.com/f78f1848e0.js"
-			crossorigin="anonymous"
-		></script>
+      
 
     <!-- GOOGLE FONT IMPORT  --> 
     <style>
@@ -46,7 +42,7 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item homeNav" href="/homepage">Home</a></li>
               <li><a class="dropdown-item myAccountNav" href="/dashboard">My account</a></li>
-              <li><a class="dropdown-item logOutNav" href="/landing">Log out</a></li>
+              <li><a class="dropdown-item logOutNav" href="/login">Log out</a></li>
             </ul>
           </li>
         </ul>
@@ -126,7 +122,14 @@
 <!-- {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{!-- <script>Handlebars.compile($('#t').html())</script> --}}
-  {{/if}}
-
+  {{/if}}-->
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+			src="https://kit.fontawesome.com/f78f1848e0.js"
+			crossorigin="anonymous"
+		></script>
 </body>
 </html>
