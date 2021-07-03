@@ -12,7 +12,7 @@
         {{#if reviews.length}}
 <section>
     {{#each reviews as |review|}}
-    <div class="border border-1 mb-1" id="dashboard-reviews">
+    <div class="border border-1 mb-4" id="dashboard-reviews">
       <p class="mx-3 pt-2">{{review.review_text}}</p>
       <p><a href="/dashboard/edit/{{review.id}}" class="edit-link btn btn-lg btn-primary btn-block text-uppercase signUpBtn mx-5 signup-form">Edit post</a></p>
 
